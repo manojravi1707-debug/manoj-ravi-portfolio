@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manoj Ravi | Electronics & Communication Engineer | Portfolio</title>
+  <meta name="description" content="Portfolio of Manoj Ravi - B.E in Electronics & Communication Engineering. Embedded Systems, IoT, Python, UiPath RPA Developer, C Programming.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cyberDark: '#070b14',
+            cyberSurface: '#0d1527',
+            cyberCard: '#101a30',
+            primaryIndigo: '#6366f1',
+            accentCyan: '#06b6d4',
+            accentEmerald: '#10b981',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#070b14] text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo / Profile -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-[10px]">
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg text-white group-hover:text-indigo-400 transition-colors">Manoj Ravi</span>
+          <p class="text-xs text-slate-400 font-mono">B.E • ECE Graduate</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-white transition-colors">About</a>
+        <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#education" class="hover:text-white transition-colors">Education</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button id="view-resume-btn" class="btn-secondary text-xs !py-2 !px-4 font-medium flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+          <span>View Resume</span>
+        </button>
+        <a href="#contact" class="btn-primary text-xs !py-2 !px-4">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10 px-6 py-5 space-y-4">
+      <a href="#about" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">About</a>
+      <a href="#skills" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Skills</a>
+      <a href="#projects" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Projects</a>
+      <a href="#experience" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Experience</a>
+      <a href="#education" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Education</a>
+      <a href="#contact" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Contact</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button id="mobile-resume-btn" class="btn-secondary w-full text-xs !py-2">View Resume</button>
+        <a href="#contact" class="btn-primary w-full text-xs !py-2 text-center mobile-nav-link">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="hero" class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
+    <!-- Ambient glowing orbs in background -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Introduction -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Tag -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/30 text-xs">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="pulse-available absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
+            <span class="text-slate-300 font-medium">Open to Full-Time Engineering Roles</span>
+            <span class="text-slate-500">•</span>
+            <span class="text-cyan-400 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Coimbatore, Tamil Nadu</span>
+          </div>
+
+          <!-- Main Headline -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+              Hello, I'm <span class="text-gradient">Manoj Ravi</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-display font-semibold text-slate-300 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+              <span>B.E Graduate</span>
+              <span class="text-indigo-400">•</span>
+              <span class="text-gradient-cyan">Electronics & Communication</span>
+              <span class="text-indigo-400">•</span>
+              <span class="text-indigo-300">IoT & Automation</span>
+            </p>
+          </div>
+
+          <!-- Bio Description -->
+          <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Passionate electronics engineering graduate blending hardware acumen with modern software capabilities. Experienced in <strong class="text-slate-200">Embedded C, PIC Microcontrollers, Raspberry Pi IoT systems</strong>, and enterprise <strong class="text-slate-200">UiPath Robotic Process Automation (RE Framework)</strong>.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#projects" class="btn-primary">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Explore My Projects</span>
+            </a>
+
+            <button id="hero-resume-btn" class="btn-secondary">
+              <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+              <span>Download Resume</span>
+            </button>
+
+            <a href="#contact" class="btn-secondary">
+              <i data-lucide="send" class="w-4 h-4 text-indigo-400"></i>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Connect Pills -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
+            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition" data-clipboard="manojravi1707@gmail.com" title="Click to copy email">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
+              <span>manojravi1707@gmail.com</span>
+              <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
+            </button>
+
+            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition" data-clipboard="6379348375" title="Click to copy phone number">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+              <span>+91 6379348375</span>
+              <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive Profile Card / Highlights -->
+        <div class="lg:col-span-5">
+          <div class="glass-card p-6 sm:p-8 relative space-y-6">
+            
+            <!-- Glowing top corner badge -->
+            <div class="absolute -top-3 -right-3">
+              <span class="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-indigo-600 text-white shadow-lg shadow-indigo-600/40 border border-indigo-400">
+                Verified Candidate
+              </span>
+            </div>
+
+            <!-- Profile Summary & Photo Representation -->
+            <div class="flex items-center gap-4">
+              <div class="relative shrink-0">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-xl shadow-indigo-500/30 overflow-hidden group">
+                  <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105">
+                </div>
+                <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-[#0d1527] flex items-center justify-center text-[10px] text-white shadow-md shadow-emerald-500/50" title="Open to Opportunities">
+                  ✓
+                </div>
+              </div>
+              <div>
+                <h3 class="font-display font-bold text-xl text-white">Manoj Ravi</h3>
+                <p class="text-xs text-indigo-400 font-mono">Electronics & Communication (ECE)</p>
+                <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
+                  <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-400"></i>
+                  <span>Sri Shakthi Institute • 2020 - 2024</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Academic & Project Metric Grid -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
+                <span class="text-[11px] text-slate-400 uppercase font-semibold">Engineering GPA</span>
+                <div class="text-2xl font-bold font-display text-white">7.8 <span class="text-xs text-slate-500">/ 10</span></div>
+                <p class="text-[10px] text-cyan-400">Sri Shakthi Institute</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
+                <span class="text-[11px] text-slate-400 uppercase font-semibold">Higher Secondary</span>
+                <div class="text-2xl font-bold font-display text-white">7.0 <span class="text-xs text-slate-500">/ 10</span></div>
+                <p class="text-[10px] text-indigo-400">Sathya Sai School</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
+                <span class="text-[11px] text-slate-400 uppercase font-semibold">Key Projects</span>
+                <div class="text-2xl font-bold font-display text-white">2+</div>
+                <p class="text-[10px] text-emerald-400">IoT Sensors & UiPath RPA</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
+                <span class="text-[11px] text-slate-400 uppercase font-semibold">Languages</span>
+                <div class="text-sm font-bold font-display text-white mt-1">English & Tamil</div>
+                <p class="text-[10px] text-slate-400">Fluent Professional</p>
+              </div>
+            </div>
+
+            <!-- Focus areas tags -->
+            <div class="space-y-2 pt-2 border-t border-white/10">
+              <span class="text-xs text-slate-400 font-medium block">Key Focus Areas:</span>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="tag-badge cyan"><i data-lucide="cpu" class="w-3 h-3"></i> Embedded C</span>
+                <span class="tag-badge indigo"><i data-lucide="bot" class="w-3 h-3"></i> UiPath RE Framework</span>
+                <span class="tag-badge emerald"><i data-lucide="terminal" class="w-3 h-3"></i> Python & C</span>
+                <span class="tag-badge"><i data-lucide="database" class="w-3 h-3"></i> MySQL</span>
+                <span class="tag-badge"><i data-lucide="server" class="w-3 h-3"></i> Linux</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION ================= -->
+  <section id="about" class="py-20 relative border-t border-white/5 bg-[#0a0f1d]/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">About Me</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Engineering Mindset, Driven by Curiosity & Impact
+        </h2>
+        <p class="text-sm text-slate-400">
+          Bridging physical electronics with intelligent software systems to build practical, scalable technology.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Story / Summary Card -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-8 space-y-6">
+          <div class="space-y-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+            <p>
+              I am a <strong class="text-white">Bachelor of Engineering graduate in Electronics & Communication</strong> from Sri Shakthi Institute, Coimbatore. With an engineering GPA of <strong class="text-white">7.8 / 10</strong>, my academic and hands-on journey has centered on deciphering how software and physical hardware seamlessly collaborate.
+            </p>
+            <p>
+              My technical pursuits encompass <strong class="text-cyan-400">Embedded Systems & IoT</strong> (interfacing Raspberry Pi and PIC microcontrollers with real-world sensors, communication protocols, and LCD displays) alongside modern <strong class="text-indigo-400">Robotic Process Automation</strong> utilizing UiPath's Robotic Enterprise (RE) Framework to streamline data scraping, web automation, and reporting workflows.
+            </p>
+            <p>
+              In addition to technical proficiencies in <strong class="text-slate-100">C, Python, MySQL, and Linux</strong>, my experience at <strong class="text-white">Hexaware Technologies</strong> honed my ability to communicate transparently, troubleshoot efficiently under pressure, and uphold high service excellence standards.
+            </p>
+          </div>
+
+          <!-- Quote / Objective callout -->
+          <div class="p-4 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-xs sm:text-sm text-indigo-200 flex items-start gap-3">
+            <i data-lucide="target" class="w-5 h-5 text-indigo-400 shrink-0 mt-0.5"></i>
+            <div>
+              <strong class="text-white block mb-0.5">Career Objective:</strong>
+              "To obtain an entry-level position in a reputed organization where I can apply my skills and knowledge to contribute to organizational growth, learn from experienced professionals, and advance my technical career."
+            </div>
+          </div>
+
+          <!-- Spoken Languages & Personal Strengths -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="globe" class="w-3.5 h-3.5 text-cyan-400"></i>
+                <span>Languages</span>
+              </span>
+              <div class="space-y-1.5 text-sm">
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-200">English</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/50">Fluent</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-slate-200">Tamil</span>
+                  <span class="text-xs px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 border border-indigo-800/50">Native / Fluent</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-amber-400"></i>
+                <span>Core Competencies</span>
+              </span>
+              <div class="flex flex-wrap gap-1.5 text-xs text-slate-300">
+                <span class="px-2 py-1 rounded bg-slate-800 border border-white/5">Leadership</span>
+                <span class="px-2 py-1 rounded bg-slate-800 border border-white/5">Active Listening</span>
+                <span class="px-2 py-1 rounded bg-slate-800 border border-white/5">Time Management</span>
+                <span class="px-2 py-1 rounded bg-slate-800 border border-white/5">Analytical Problem Solving</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Feature Pillars -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <div class="glass-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white">Hardware & Embedded Systems</h3>
+            <p class="text-xs sm:text-sm text-slate-400">
+              Proficient in PIC microcontrollers, Embedded C, sensor integration (soil nutrients, pH, moisture), LCD interfacing, and serial communication protocols.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/15 border border-indigo-500/30 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white">RPA & Process Automation</h3>
+            <p class="text-xs sm:text-sm text-slate-400">
+              Experienced in UiPath Studio with the Robotic Enterprise (RE) Framework, designing automated web data scrapers, Excel data manipulators, and automated email dispatches.
+            </p>
+          </div>
+
+          <div class="glass-card p-6 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="terminal" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-display font-bold text-lg text-white">Software & OS Foundations</h3>
+            <p class="text-xs sm:text-sm text-slate-400">
+              Solid algorithmic thinking in Python and C, relational database querying with MySQL, and comfortable in Linux terminal environments.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SKILLS SECTION ================= -->
+  <section id="skills" class="py-20 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">Technical Arsenal</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Skills & Technical Expertise
+        </h2>
+        <p class="text-sm text-slate-400">
+          A comprehensive breakdown of programming languages, hardware stacks, frameworks, and professional competencies.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Category 1: Embedded & Hardware -->
+        <div class="glass-card p-6 space-y-5">
+          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-white">Hardware & Embedded</h3>
+              <p class="text-[11px] text-slate-400">Firmware & Microcontrollers</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Embedded C</span>
+                <span class="text-cyan-400 font-mono">Proficient</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Raspberry Pi & Sensors</span>
+                <span class="text-cyan-400 font-mono">Hands-on</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 82%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">PIC Microcontroller</span>
+                <span class="text-cyan-400 font-mono">Internship Trained</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 78%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Hardware Support & Diagnostics</span>
+                <span class="text-cyan-400 font-mono">Solid</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-1.5">
+            <span class="tag-badge">LCD Interfacing</span>
+            <span class="tag-badge">Soil Sensors</span>
+            <span class="tag-badge">Protocols</span>
+            <span class="tag-badge">Simulation</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Programming & Software -->
+        <div class="glass-card p-6 space-y-5">
+          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center">
+              <i data-lucide="code" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-white">Programming & Data</h3>
+              <p class="text-[11px] text-slate-400">Core Languages & Databases</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">C Programming</span>
+                <span class="text-indigo-400 font-mono">Strong</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Python</span>
+                <span class="text-indigo-400 font-mono">Scripting & Logic</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">MySQL</span>
+                <span class="text-indigo-400 font-mono">Queries & Schema</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Linux OS</span>
+                <span class="text-indigo-400 font-mono">CLI & Systems</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 76%;"></div></div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-1.5">
+            <span class="tag-badge">Data Processing</span>
+            <span class="tag-badge">Relational DB</span>
+            <span class="tag-badge">Bash / Terminal</span>
+          </div>
+        </div>
+
+        <!-- Category 3: RPA & Professional Skills -->
+        <div class="glass-card p-6 space-y-5">
+          <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+              <i data-lucide="bot" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="font-display font-bold text-base text-white">Automation & Soft Skills</h3>
+              <p class="text-[11px] text-slate-400">RPA Frameworks & Leadership</p>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">UiPath RE Framework</span>
+                <span class="text-emerald-400 font-mono">Project Verified</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Web & Excel Scraping</span>
+                <span class="text-emerald-400 font-mono">Automated</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Communication & Active Listening</span>
+                <span class="text-emerald-400 font-mono">Hexaware Experience</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+            </div>
+
+            <div class="space-y-1.5">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-300 font-medium">Time Management & Leadership</span>
+                <span class="text-emerald-400 font-mono">High</span>
+              </div>
+              <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap gap-1.5">
+            <span class="tag-badge">Email Automation</span>
+            <span class="tag-badge">Exception Handling</span>
+            <span class="tag-badge">Cross-functional</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS SECTION ================= -->
+  <section id="projects" class="py-20 relative border-t border-white/5 bg-[#0a0f1d]/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">Featured Work</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Engineering & Automation Projects
+        </h2>
+        <p class="text-sm text-slate-400">
+          Practical applications spanning smart IoT precision agriculture, enterprise robotic process automation, and microcontrollers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Project 1: Raspberry Pi Soil Analysis -->
+        <div class="glass-card p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between gap-2">
+              <span class="tag-badge cyan">
+                <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+                <span>IoT & Embedded Systems</span>
+              </span>
+              <span class="text-xs text-slate-400 font-mono">Hardware & Python</span>
+            </div>
+
+            <h3 class="text-2xl font-display font-bold text-white">
+              Raspberry Pi Soil Analysis & Smart Crop Recommendation System
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Designed and built an end-to-end smart agricultural solution that automates soil health diagnostics. The system interfaces soil sensors with a Raspberry Pi to capture real-time nutritional and physical telemetry, computing crop suitability algorithms to guide farmers toward maximum agricultural yield.
+            </p>
+
+            <!-- Key Feature Points from Resume -->
+            <div class="space-y-2.5 pt-2">
+              <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Key Implementations:</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Precision Soil Analysis:</strong> Interfaced physical soil sensors to measure pH, moisture, and key macronutrient indices.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Nutritional & Physical Profiling:</strong> Processed raw sensor telemetry to classify soil quality parameters under varied conditions.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Algorithmic Crop Recommendation:</strong> Engineered decision logic matching current soil conditions to the most viable crop strains.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Tech stack tags & action -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tag-badge cyan">Raspberry Pi</span>
+              <span class="tag-badge">Soil Sensors</span>
+              <span class="tag-badge">Python</span>
+              <span class="tag-badge">Embedded Hardware</span>
+            </div>
+            
+            <button class="project-details-btn btn-secondary text-xs !py-1.5 !px-3 font-medium" data-project="soil">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2: UiPath and Automation -->
+        <div class="glass-card p-6 sm:p-8 space-y-6 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between gap-2">
+              <span class="tag-badge indigo">
+                <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+                <span>RPA & Process Automation</span>
+              </span>
+              <span class="text-xs text-slate-400 font-mono">UiPath Studio</span>
+            </div>
+
+            <h3 class="text-2xl font-display font-bold text-white">
+              UiPath Robotic Enterprise Automation & Web Data Scraping Pipeline
+            </h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Architected robotic process automation bots using the industry-standard UiPath Robotic Enterprise (RE) Framework. Streamlined repetitive manual workflows across web applications and Excel sheets, reducing execution turnaround times and eliminating human input inaccuracies.
+            </p>
+
+            <!-- Key Feature Points from Resume -->
+            <div class="space-y-2.5 pt-2">
+              <h4 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Key Implementations:</h4>
+              <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Robotic Enterprise (RE) Framework:</strong> Implemented state-machine architecture for automatic page filling with error handling.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Data Scraping & Web Automation:</strong> Extracted high-volume structured information from web apps into Excel to simplify analytics.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
+                  <span><strong>Automated Document Dispatch:</strong> Configured unattended email automation pipelines sending dynamic document copies to stakeholders.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Tech stack tags & action -->
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tag-badge indigo">UiPath Studio</span>
+              <span class="tag-badge">RE Framework</span>
+              <span class="tag-badge">Excel Automation</span>
+              <span class="tag-badge">Web Scraping</span>
+            </div>
+
+            <button class="project-details-btn btn-secondary text-xs !py-1.5 !px-3 font-medium" data-project="rpa">
+              <span>View Details</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Hardware Mini-Project Callout (Internship Project) -->
+      <div class="mt-8 glass-card p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-3xl">
+          <div class="flex items-center gap-2">
+            <span class="tag-badge emerald text-xs">Firmware & Microcontroller</span>
+            <span class="text-xs text-slate-400 font-mono">Tech UC Embedded Project</span>
+          </div>
+          <h4 class="text-xl font-display font-bold text-white">PIC Microcontroller & LCD Telemetry Interface</h4>
+          <p class="text-xs sm:text-sm text-slate-400">
+            Engineered PIC microcontroller software routines in Embedded C, interfacing with alphanumeric LCD displays and verifying signal timings through embedded simulation tools and standard communication protocols.
+          </p>
+        </div>
+        <div class="shrink-0 flex items-center gap-2">
+          <span class="tag-badge">PIC Microcontroller</span>
+          <span class="tag-badge">Embedded C</span>
+          <span class="tag-badge">LCD Display</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE SECTION ================= -->
+  <section id="experience" class="py-20 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">Career Journey</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Work Experience & Internships
+        </h2>
+        <p class="text-sm text-slate-400">
+          Professional track record demonstrating customer success, teamwork, and hands-on embedded firmware development.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-8">
+
+        <!-- Experience 1: Hexaware Technologies -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="glass-card p-6 sm:p-7 space-y-4">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <div>
+                <h3 class="text-xl font-display font-bold text-white">Hexaware Technologies</h3>
+                <p class="text-sm text-indigo-400 font-medium">Associate / Customer Support Executive</p>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-indigo-950/80 text-indigo-300 border border-indigo-800/60 self-start sm:self-auto">
+                10 Jul 2025 – 3 Apr 2026
+              </span>
+            </div>
+
+            <p class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="building" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>Hexaware Technologies Limited</span>
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Assisted customers with critical inquiries through clear communication, empathy, and active listening.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Managed turnaround times efficiently to handle multiple customer interactions daily with minimal queue delay.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Delivered effective solutions and root-cause fixes while upholding strict organizational service quality standards.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                <span>Enhanced customer satisfaction scores by resolving escalations promptly and collaboratively.</span>
+              </li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="tag-badge">Clear Communication</span>
+              <span class="tag-badge">Time Management</span>
+              <span class="tag-badge">Issue Resolution</span>
+              <span class="tag-badge">Customer Success</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Experience 2: Tech UC - Intern -->
+        <div class="timeline-item">
+          <div class="timeline-dot !bg-cyan-400 !shadow-cyan-400"></div>
+          <div class="glass-card p-6 sm:p-7 space-y-4">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <div>
+                <h3 class="text-xl font-display font-bold text-white">Tech UC</h3>
+                <p class="text-sm text-cyan-400 font-medium">Embedded Systems Intern</p>
+              </div>
+              <span class="px-3 py-1 rounded-full text-xs font-mono bg-cyan-950/80 text-cyan-300 border border-cyan-800/60 self-start sm:self-auto">
+                1 Jan 2022 – 1 Feb 2022
+              </span>
+            </div>
+
+            <p class="text-xs text-slate-400 flex items-center gap-1.5">
+              <i data-lucide="cpu" class="w-3.5 h-3.5 text-slate-400"></i>
+              <span>Embedded Hardware Division</span>
+            </p>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-300">
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span>Gained rigorous practical knowledge working directly with PIC microcontrollers and peripheral architecture.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span>Programmed and interfaced PIC microcontrollers with 16x2 alphanumeric LCD display modules.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span>Applied foundational concepts of Embedded C programming, register configurations, and timing delays.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                <span>Studied basics of industrial communication protocols and performed circuit simulation using specialized embedded software.</span>
+              </li>
+            </ul>
+
+            <div class="pt-2 flex flex-wrap gap-1.5">
+              <span class="tag-badge cyan">PIC Microcontroller</span>
+              <span class="tag-badge cyan">Embedded C</span>
+              <span class="tag-badge">LCD Display</span>
+              <span class="tag-badge">Communication Protocols</span>
+              <span class="tag-badge">Simulation Tools</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION SECTION ================= -->
+  <section id="education" class="py-20 relative border-t border-white/5 bg-[#0a0f1d]/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">Academic Credentials</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Education & Qualifications
+        </h2>
+        <p class="text-sm text-slate-400">
+          Rigorous academic foundations in Electronics and Communication Engineering.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+        <!-- Degree: Sri Shakthi Institute -->
+        <div class="glass-card p-6 sm:p-8 space-y-5 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="tag-badge indigo">Bachelor of Engineering</span>
+              <span class="text-xs font-mono text-slate-400">2020 – 2024</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="text-xl font-display font-bold text-white">Sri Shakthi Institute</h3>
+              <p class="text-sm text-indigo-400 font-medium">Electronics and Communication Engineering (B.E - ECE)</p>
+            </div>
+
+            <!-- GPA Card -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 uppercase font-semibold">Grade Point Average</span>
+                <div class="text-2xl font-bold font-display text-white">7.8 <span class="text-xs text-slate-500">/ 10</span></div>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                78%
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Covered core curricula in microprocessors, digital logic design, embedded systems, signals & systems, and telecommunication networks.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-slate-400">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i>
+            <span>Coimbatore, Tamil Nadu</span>
+          </div>
+        </div>
+
+        <!-- Higher Secondary: Sathya Sai -->
+        <div class="glass-card p-6 sm:p-8 space-y-5 flex flex-col justify-between">
+          <div class="space-y-4">
+            
+            <div class="flex items-center justify-between">
+              <span class="tag-badge cyan">Higher Secondary (HSC)</span>
+              <span class="text-xs font-mono text-slate-400">2019 – 2020</span>
+            </div>
+
+            <div class="space-y-1">
+              <h3 class="text-xl font-display font-bold text-white">Sathya Sai</h3>
+              <p class="text-sm text-cyan-400 font-medium">Higher Secondary Education</p>
+            </div>
+
+            <!-- GPA Card -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-xs text-slate-400 uppercase font-semibold">Grade Point Average</span>
+                <div class="text-2xl font-bold font-display text-white">7.0 <span class="text-xs text-slate-500">/ 10</span></div>
+              </div>
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold text-sm">
+                70%
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Focused on science, mathematics, and physics fundamentals, establishing analytical and quantitative problem-solving foundations.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-xs text-slate-400">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <span>Completed with Distinction</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT SECTION ================= -->
+  <section id="contact" class="py-20 relative border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+        <span class="hero-badge">Get in Touch</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Let's Build Something Great Together
+        </h2>
+        <p class="text-sm text-slate-400">
+          Currently open for full-time opportunities, engineering roles, and technical collaborations. Feel free to reach out directly.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Direct Contact Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card -->
+          <div class="glass-card p-5 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center">
+                  <i data-lucide="mail" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block">Direct Email</span>
+                  <a href="mailto:manojravi1707@gmail.com" class="text-sm font-semibold text-white hover:text-indigo-400 transition">manojravi1707@gmail.com</a>
+                </div>
+              </div>
+              <button class="copy-pill btn-secondary text-xs !p-2" data-clipboard="manojravi1707@gmail.com" title="Copy Email">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="glass-card p-5 space-y-2">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center">
+                  <i data-lucide="phone" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 block">Phone & WhatsApp</span>
+                  <a href="tel:+916379348375" class="text-sm font-semibold text-white hover:text-cyan-400 transition">+91 6379348375</a>
+                </div>
+              </div>
+              <button class="copy-pill btn-secondary text-xs !p-2" data-clipboard="6379348375" title="Copy Phone Number">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Location Card -->
+          <div class="glass-card p-5 space-y-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-xs text-slate-400 block">Location</span>
+                <span class="text-sm font-semibold text-white">Coimbatore, Tamil Nadu, India</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Reference / Handles -->
+          <div class="glass-card p-5 space-y-3">
+            <span class="text-xs text-slate-400 font-medium block">Professional Profiles:</span>
+            <div class="flex items-center gap-3">
+              <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-900/80 border border-white/5 text-xs text-slate-300">
+                <i data-lucide="globe" class="w-4 h-4 text-indigo-400"></i>
+                <span>Profile: <strong>Manojravi</strong></span>
+              </div>
+              <button id="sidebar-cv-btn" class="btn-primary text-xs !py-2 !px-3 ml-auto">
+                <i data-lucide="file-down" class="w-3.5 h-3.5"></i>
+                <span>Resume PDF</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Interactive Quick Inquiry Form -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-8 space-y-6" id="contact-form-section">
+          <div>
+            <h3 class="font-display font-bold text-xl text-white">Send a Direct Message</h3>
+            <p class="text-xs text-slate-400 mt-1">Fill out the quick inquiry form below and it will prepare a message directly to my inbox.</p>
+          </div>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label class="text-xs text-slate-300 font-medium">Your Name *</label>
+                <input type="text" id="contact-name" required placeholder="e.g. John Doe" class="w-full bg-slate-900/80 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs text-slate-300 font-medium">Your Email *</label>
+                <input type="email" id="contact-email" required placeholder="name@company.com" class="w-full bg-slate-900/80 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300 font-medium">Subject</label>
+              <input type="text" id="contact-subject" placeholder="Job Opportunity / Project Inquiry" class="w-full bg-slate-900/80 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition">
+            </div>
+
+            <div class="space-y-1.5">
+              <label class="text-xs text-slate-300 font-medium">Message *</label>
+              <textarea id="contact-message" required rows="4" placeholder="Hello Manoj, we came across your portfolio and would like to discuss..." class="w-full bg-slate-900/80 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-indigo-500 transition"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full text-sm">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t border-white/10 py-8 bg-[#070b14] text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-display font-bold text-white text-sm">Manoj Ravi</span>
+        <span>•</span>
+        <span>B.E (Electronics & Communication Engineering)</span>
+      </div>
+
+      <p class="text-slate-500">
+        Crafted with precision & modern web standards. &copy; 2026 Manoj Ravi. All rights reserved.
+      </p>
+
+      <div class="flex items-center gap-4">
+        <a href="#hero" class="text-slate-400 hover:text-white transition">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= RESUME PREVIEW & PRINT MODAL ================= -->
+  <div id="resume-modal" class="modal-overlay">
+    <div class="modal-card p-6 sm:p-8 space-y-6">
+      
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-3">
+          <img src="profile.jpg" alt="Manoj Ravi" class="w-11 h-11 rounded-xl object-cover object-top border border-indigo-500/40 shadow-md">
+          <div>
+            <h3 class="font-display font-bold text-lg text-white">Manoj Ravi — Official Resume</h3>
+            <p class="text-xs text-slate-400">B.E - ECE • Coimbatore, Tamil Nadu</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="modal-print-btn" class="btn-primary text-xs !py-1.5 !px-3" title="Print or Save as PDF">
+            <i data-lucide="printer" class="w-3.5 h-3.5"></i>
+            <span>Print / PDF</span>
+          </button>
+          <button id="modal-close-btn" class="text-slate-400 hover:text-white p-1.5 rounded-lg hover:bg-white/5">
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Resume Content Area (Clean structured layout) -->
+      <div class="space-y-6 text-sm text-slate-300 print-area" id="resume-printable-content">
+        
+        <!-- Header Info -->
+        <div class="border-b border-white/10 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-4">
+            <img src="profile.jpg" alt="Manoj Ravi" class="w-16 h-16 rounded-xl object-cover object-top border border-indigo-500/30 shadow-md shrink-0">
+            <div>
+              <h1 class="text-2xl font-bold text-white font-display">MANOJ RAVI</h1>
+              <p class="text-indigo-400 font-semibold text-xs tracking-wider uppercase">B.E - Electronics & Communication Engineering</p>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 space-y-0.5 sm:text-right font-mono">
+            <div>📞 +91 6379348375</div>
+            <div>✉️ manojravi1707@gmail.com</div>
+            <div>📍 Coimbatore, Tamil Nadu</div>
+            <div>🌐 Profile: Manojravi</div>
+          </div>
+        </div>
+
+        <!-- Profile Summary -->
+        <div class="space-y-1.5">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Profile Summary</h2>
+          <p class="text-xs leading-relaxed text-slate-300">
+            To obtain an entry-level position in a reputed organization where I can apply my skills and knowledge to contribute to the company's growth, learn from experienced professionals, and further develop my skills and expertise to advance my career.
+          </p>
+        </div>
+
+        <!-- Education -->
+        <div class="space-y-2">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Education</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <span class="text-slate-400">2020 – 2024</span>
+              <div class="font-bold text-white">SRI SHAKTHI INSTITUTE</div>
+              <div class="text-indigo-300">Electronics and Communication Engineering</div>
+              <div class="font-mono text-cyan-400 font-semibold">GPA: 7.8 / 10</div>
+            </div>
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <span class="text-slate-400">2019 – 2020</span>
+              <div class="font-bold text-white">SATHYA SAI</div>
+              <div class="text-indigo-300">Higher Secondary (HSC)</div>
+              <div class="font-mono text-cyan-400 font-semibold">GPA: 7.0 / 10</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Skills -->
+        <div class="space-y-2">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Technical Skills</h2>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">C Programming</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">Python</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">MySQL</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">Hardware Support</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">Embedded C</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">Linux</span>
+            <span class="px-2.5 py-1 rounded bg-slate-900 border border-white/10 font-mono text-slate-200">UiPath RE Framework</span>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="space-y-2">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Projects</h2>
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <div class="flex justify-between font-bold text-white">
+                <span>Raspberry Pi — Soil Analysis & Crop Recommendation</span>
+                <span class="text-cyan-400">IoT / Python</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-400 pl-1">
+                <li>Soil analysis using physical soil sensors.</li>
+                <li>Crop recommendation based on soil nutritional and physical analysis.</li>
+              </ul>
+            </div>
+
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <div class="flex justify-between font-bold text-white">
+                <span>UiPath and Automation — RE Framework & Web Automation</span>
+                <span class="text-indigo-400">RPA / Excel</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-400 pl-1">
+                <li>Working with the RE Framework for automatic page filling.</li>
+                <li>Data scraping and web application automation for easy data analysis and time reduction.</li>
+                <li>Email automation with attached document copy.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="space-y-2">
+          <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Work Experience</h2>
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <div class="flex justify-between font-bold text-white">
+                <span>HEXAWARE TECHNOLOGIES</span>
+                <span class="font-mono text-slate-400">10 Jul 2025 – 3 Apr 2026</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-400 pl-1">
+                <li>Assisted customers with queries through clear communication and active listening.</li>
+                <li>Managed time efficiently to handle multiple customer interactions daily.</li>
+                <li>Delivered effective solutions while maintaining high service quality standards.</li>
+                <li>Enhanced customer satisfaction by resolving issues promptly.</li>
+              </ul>
+            </div>
+
+            <div class="p-3 rounded-lg bg-slate-900/50 border border-white/5 space-y-1">
+              <div class="flex justify-between font-bold text-white">
+                <span>TECH UC — INTERN</span>
+                <span class="font-mono text-slate-400">1 Jan – 1 Feb 2022</span>
+              </div>
+              <ul class="list-disc list-inside space-y-0.5 text-slate-400 pl-1">
+                <li>Working with PIC microcontroller and interfacing with LCD display.</li>
+                <li>Basics of Embedded C and communication protocols.</li>
+                <li>Simulation of projects using Embedded Software.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Expertise & Languages -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-2 border-t border-white/10">
+          <div>
+            <span class="text-indigo-400 font-bold uppercase block mb-1">Soft Skills / Expertise:</span>
+            <span class="text-slate-300">Leadership • Clear Communication • Time Management</span>
+          </div>
+          <div>
+            <span class="text-indigo-400 font-bold uppercase block mb-1">Languages:</span>
+            <span class="text-slate-300">English (Fluent) • Tamil (Fluent)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= PROJECT DETAILS MODAL ================= -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-card p-6 sm:p-8 space-y-5">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3">
+        <h3 id="project-modal-title" class="text-lg font-display font-bold text-white">Project Details</h3>
+        <button id="project-modal-close" class="text-slate-400 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div id="project-modal-body" class="space-y-4 text-xs sm:text-sm text-slate-300">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
