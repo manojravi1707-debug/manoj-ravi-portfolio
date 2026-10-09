@@ -1,43 +1,35 @@
-# 🌟 Manoj Ravi — Professional Engineering Portfolio Website
+# 🌟 Manoj Ravi — Professional Multi-Page Engineering Portfolio Website
 
-An aesthetic, modern, and high-impact personal portfolio website showcasing **Manoj Ravi's** qualifications, technical skills, engineering projects, and work experience as an **Electronics & Communication Engineer (B.E - ECE)** and **Automation Developer**.
+An aesthetic, responsive, multi-page portfolio website showcasing **Manoj Ravi's** qualifications, technical skills, engineering projects, and work experience as an **Electronics & Communication Engineer (B.E - ECE)** and **Automation Developer**.
 
 ---
 
-## 🎨 Visual Design & Theme
-- **Aesthetic Cyber-Engineering Theme**: Obsidian/deep slate background with ambient indigo and cyan radial glows, glassmorphic backdrop filters, and sleek typography (`Outfit` + `Inter`).
+## 🏗️ Multi-Page Architecture
+
+This portfolio is structured across specialized pages so visitors can explore high-level overviews on the base page and click through to dedicated pages for comprehensive details:
+
+| Page | URL | Description |
+|---|---|---|
+| **Home (Base Page)** | [`index.html`](index.html) | Master overview hub featuring profile photo, hero elevator pitch, key metrics, and interactive directory cards leading to dedicated topic pages. |
+| **About Me** | [`about.html`](about.html) | In-depth biography, official career objective, engineering philosophy, spoken languages (English & Tamil), and core competencies. |
+| **Engineering Projects** | [`projects.html`](projects.html) | Technical case studies: Raspberry Pi Soil Analysis System (NPK, pH, moisture sensors, ADC) and UiPath RE Framework automation pipeline. |
+| **Work Experience** | [`experience.html`](experience.html) | Professional history at Hexaware Technologies (customer operations & query resolution) and Tech UC (PIC microcontroller & embedded firmware internship). |
+| **Technical Skills** | [`skills.html`](skills.html) | Complete skill matrix across Programming (C, Python, Embedded C), Hardware, UiPath RPA, Databases (MySQL), Linux, and Soft Skills. |
+| **Education Credentials** | [`education.html`](education.html) | Academic history: Sri Shakthi Institute (B.E ECE - 7.8 GPA) and Sathya Sai Higher Secondary (7.0 GPA) with coursework. |
+| **Contact & Connect** | [`contact.html`](contact.html) | Interactive contact form, 1-click clipboard copying for email and phone (+91 6379348375), and Coimbatore location card. |
+
+---
+
+## 🎨 Visual Design & Highlights
+
+- **Cyber-Engineering Dark Theme**: Deep obsidian background with ambient indigo and cyan radial lighting, glassmorphic blur cards, and sleek typography (`Inter`, `Outfit`, and `JetBrains Mono`).
 - **Interactive UI**:
-  - Live availability badge (`Open to Opportunities • Coimbatore, TN`)
-  - 1-Click contact copying (Email: `manojravi1707@gmail.com`, Phone: `+91 6379348375`) with animated toast feedback
-  - Project detail popups with technical implementation highlights and business impact
-  - Interactive career and internship timeline
-  - Interactive formatted **Resume Modal** with built-in **Print / Save as PDF** support (`@media print` stylesheet)
-  - Interactive contact form with auto-formatted `mailto:` client integration
-  - 100% Mobile-first responsive design with accessible navigation drawer
-
----
-
-## 📄 Sections Included
-
-1. **Header & Navigation**: Sticky blur navigation with brand monogram (`MR`), quick section links, and one-click "View Resume" action.
-2. **Hero Section**: Strong elevator pitch, status badge, GPA highlight (7.8 / 10), and quick-action buttons.
-3. **About Me**: Narrative connecting electronics hardware (PIC, Raspberry Pi) with software (Python, C, UiPath RE Framework, MySQL, Linux) and professional competencies from Hexaware Technologies.
-4. **Technical Arsenal & Skills**:
-   - **Hardware & Embedded**: Embedded C, Raspberry Pi, PIC Microcontrollers, Soil & Environmental Sensors, LCD Interfacing, Hardware Support.
-   - **Programming & Databases**: Python, C Programming, MySQL, Linux OS.
-   - **Automation & Professional**: UiPath Studio (RE Framework), Web Scraping, Excel Automation, Leadership, Clear Communication, Time Management.
-5. **Featured Projects**:
-   - **Raspberry Pi Soil Analysis & Crop Recommendation System**: Precision IoT sensor analysis (NPK, pH, moisture) and agricultural decision-making algorithm.
-   - **UiPath Robotic Enterprise Automation**: RE Framework transaction processing, automatic web form data entry, web scraping into Excel, and automated email distribution.
-   - **PIC Microcontroller & LCD Telemetry**: Firmware in Embedded C, communication protocols, and circuit simulation.
-6. **Work Experience**:
-   - **Hexaware Technologies** (Associate / Support Executive, 2025–2026): Customer query resolution, queue time reduction, prompt issue escalations.
-   - **Tech UC** (Embedded Systems Intern, 2022): PIC microcontroller programming, LCD interfacing, Embedded C, communication protocols.
-7. **Education**:
-   - **Sri Shakthi Institute**: B.E in Electronics & Communication Engineering (GPA: 7.8 / 10, 2020–2024).
-   - **Sathya Sai**: Higher Secondary (GPA: 7.0 / 10, 2019–2020).
-8. **Contact & Connect**: Direct copy buttons for email and phone, location card, and quick message inquiry form.
-9. **Official Resume Modal**: Structured CV with one-click print/PDF download.
+  - Live availability indicator (`Open to Full-Time Roles • Coimbatore, Tamil Nadu`).
+  - 1-Click contact copying (`manojravi1707@gmail.com` and `+91 6379348375`) with animated toast feedback.
+  - Interactive project detail modal and full-page case studies.
+  - Formatted **Resume Modal** accessible from any page with built-in **Print / Save as PDF** support (`@media print`).
+  - Interactive contact form with auto-formatted `mailto:` client integration.
+  - 100% Mobile-first responsive navigation drawer.
 
 ---
 
@@ -45,9 +37,16 @@ An aesthetic, modern, and high-impact personal portfolio website showcasing **Ma
 
 ```
 manoj-ravi-portfolio/
-├── index.html       # Semantic responsive HTML5 structure
-├── styles.css       # Custom aesthetic styling, glassmorphism, animations & print layout
-├── script.js        # Event handlers, clipboard toasts, modal controls, and mobile menu
+├── index.html       # Base overview homepage & topic directory
+├── about.html       # Dedicated biography, career objective & languages
+├── projects.html    # In-depth case studies for IoT Soil Analysis & UiPath RPA
+├── experience.html  # Career timeline: Hexaware Technologies & Tech UC
+├── skills.html      # Comprehensive technical & soft skills matrix
+├── education.html   # Degree records (Sri Shakthi Institute & Sathya Sai)
+├── contact.html     # Contact form, direct phone/email copy & location
+├── styles.css       # Tailwind utility configuration, glassmorphism & print stylesheet
+├── script.js        # Interactive modals, clipboard toasts, mobile drawer, form handling
+├── profile.jpg      # High-resolution profile portrait of Manoj Ravi
 └── README.md        # Documentation and deployment guide
 ```
 
@@ -56,7 +55,7 @@ manoj-ravi-portfolio/
 ## 🚀 How to Run Locally
 
 ### Option 1: Direct Browser Launch
-Open `index.html` directly in any web browser (Chrome, Edge, Firefox, Brave):
+Double-click `index.html` or run in PowerShell:
 ```powershell
 Start-Process "C:\Users\manoj\.gemini\antigravity\scratch\manoj-ravi-portfolio\index.html"
 ```
@@ -67,25 +66,26 @@ In PowerShell:
 cd "C:\Users\manoj\.gemini\antigravity\scratch\manoj-ravi-portfolio"
 python -m http.server 8080
 ```
-Then visit `http://localhost:8080` in your browser.
+Then visit `http://localhost:8080` in your web browser.
 
 ---
 
-## 🌐 Free 1-Click Hosting Options
+## 🐙 Git Workflow & Deployment
 
-1. **GitHub Pages**:
-   - Create a repository named `manoj-ravi-portfolio` or `<your-username>.github.io`.
-   - Push these files to the `main` branch.
-   - Go to **Settings > Pages** and select `Deploy from branch: main / root`.
-2. **Netlify / Vercel**:
-   - Drag and drop this folder onto [netlify.com/drop](https://app.netlify.com/drop) or deploy via Vercel for instant free global HTTPS hosting.
-
----
-
-## 📸 Optional: Adding a Profile Photo
-To display your portrait photo instead of the `MR` initials avatar:
-1. Save your photo as `profile.jpg` inside `manoj-ravi-portfolio/`.
-2. Open `index.html` and replace the avatar monogram div with:
-```html
-<img src="profile.jpg" alt="Manoj Ravi" class="w-20 h-20 rounded-2xl object-cover shadow-xl shadow-indigo-500/20 border-2 border-indigo-500/40">
+### Check Git Status:
+```powershell
+git status
 ```
+
+### Commit & Push:
+```powershell
+git add .
+git commit -m "feat: multi-page portfolio website with dedicated topic pages"
+git push origin main
+```
+
+### Free GitHub Pages Hosting:
+1. Push the code to GitHub.
+2. In your repository settings, navigate to **Settings > Pages**.
+3. Under **Build and deployment > Branch**, choose `main` / `root` and click **Save**.
+4. Your website will be live globally at `https://manojravi1707-debug.github.io/manoj-ravi-portfolio/`.

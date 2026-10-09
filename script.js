@@ -132,6 +132,7 @@
 
   // Scroll effect on navbar
   function attachNavbarScroll() {
+    if (!navbar) return;
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
         navbar.classList.add('shadow-xl', 'bg-[#070b14]/95');

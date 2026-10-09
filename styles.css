@@ -79,6 +79,48 @@ body {
   border-bottom: 1px solid var(--border-subtle);
 }
 
+/* Navigation Link Styling */
+.nav-link {
+  position: relative;
+  transition: color 0.2s ease;
+  padding: 0.25rem 0;
+}
+.nav-link:hover {
+  color: #ffffff;
+}
+.nav-link.active {
+  color: #818cf8;
+  font-weight: 600;
+}
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  border-radius: 9999px;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+.breadcrumb-bar a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.breadcrumb-bar a:hover {
+  color: #818cf8;
+}
+
 .glass-card {
   background: var(--bg-card);
   backdrop-filter: blur(14px);

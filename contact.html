@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Manoj Ravi | Get in Touch</title>
+  <meta name="description" content="Contact Manoj Ravi - B.E in Electronics & Communication Engineering. Email: manojravi1707@gmail.com, Phone: +91 6379348375, Coimbatore, Tamil Nadu.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            cyberDark: '#070b14',
+            cyberSurface: '#0d1527',
+            cyberCard: '#101a30',
+            primaryIndigo: '#6366f1',
+            accentCyan: '#06b6d4',
+            accentEmerald: '#10b981',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#070b14] text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Profile -->
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-[10px]">
+        </div>
+        <div>
+          <span class="font-display font-bold text-lg text-white group-hover:text-indigo-400 transition-colors">Manoj Ravi</span>
+          <p class="text-xs text-slate-400 font-mono">B.E • ECE Graduate</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="experience.html" class="nav-link">Experience</a>
+        <a href="skills.html" class="nav-link">Skills</a>
+        <a href="education.html" class="nav-link">Education</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-3">
+        <button id="view-resume-btn" class="btn-secondary text-xs !py-2 !px-4 font-medium flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+          <span>View Resume</span>
+        </button>
+        <a href="contact.html" class="btn-primary text-xs !py-2 !px-4">
+          <span>Get in Touch</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10 px-6 py-5 space-y-4">
+      <a href="index.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Home (Overview)</a>
+      <a href="about.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">About Me</a>
+      <a href="projects.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Projects Portfolio</a>
+      <a href="experience.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Work Experience</a>
+      <a href="skills.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Technical Skills</a>
+      <a href="education.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Education Credentials</a>
+      <a href="contact.html" class="block text-indigo-400 font-semibold mobile-nav-link">Contact & Connect</a>
+      <div class="pt-2 flex flex-col gap-2">
+        <button id="mobile-resume-btn" class="btn-secondary w-full text-xs !py-2">View Resume</button>
+        <a href="contact.html" class="btn-primary w-full text-xs !py-2 text-center mobile-nav-link">Contact Me</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="pt-32 pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Breadcrumb Bar -->
+      <div class="breadcrumb-bar">
+        <a href="index.html" class="flex items-center gap-1">
+          <i data-lucide="home" class="w-4 h-4"></i>
+          <span>Home</span>
+        </a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-slate-600"></i>
+        <span class="text-emerald-400 font-medium">Contact Manoj Ravi</span>
+      </div>
+
+      <!-- Page Header -->
+      <div class="space-y-4 max-w-3xl mb-16">
+        <span class="hero-badge">Get in Touch</span>
+        <h1 class="text-4xl sm:text-5xl font-display font-bold text-white tracking-tight">
+          Let's Discuss <span class="text-gradient">Opportunities & Collaborations</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed">
+          I am actively seeking entry-level engineering roles in electronics, embedded systems, robotic process automation, and software engineering. Reach out through the form or direct channels below.
+        </p>
+      </div>
+
+      <!-- Contact Grid: Form & Info Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
+        
+        <!-- Left: Interactive Contact Form -->
+        <div class="lg:col-span-7 glass-card p-6 sm:p-10 space-y-6 border-indigo-500/20">
+          <div class="border-b border-white/10 pb-4">
+            <h2 class="text-2xl font-display font-bold text-white flex items-center gap-2">
+              <i data-lucide="send" class="w-5 h-5 text-indigo-400"></i>
+              <span>Send a Message</span>
+            </h2>
+            <p class="text-xs text-slate-400 mt-1">
+              Fill out this form to send an email directly to Manoj's inbox.
+            </p>
+          </div>
+
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label for="contact-name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Name *</label>
+                <input type="text" id="contact-name" required placeholder="e.g. John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+              </div>
+
+              <div class="space-y-1.5">
+                <label for="contact-email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Your Email *</label>
+                <input type="email" id="contact-email" required placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+              </div>
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="contact-subject" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Subject</label>
+              <input type="text" id="contact-subject" placeholder="e.g. Full-Time Opportunity / Interview Request" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition">
+            </div>
+
+            <div class="space-y-1.5">
+              <label for="contact-message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider">Message *</label>
+              <textarea id="contact-message" required rows="5" placeholder="Hi Manoj, I came across your portfolio and would like to discuss..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-white/10 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition resize-y"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary w-full sm:w-auto !py-3 !px-8 text-sm flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Send Message to Manoj</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Direct Credentials & Status Cards -->
+        <div class="lg:col-span-5 space-y-6">
+          
+          <!-- Direct Channels Card -->
+          <div class="glass-card p-6 sm:p-8 space-y-6 border-cyan-500/20">
+            <h3 class="text-xl font-display font-bold text-white flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-5 h-5 text-cyan-400"></i>
+              <span>Direct Channels</span>
+            </h3>
+
+            <div class="space-y-4 text-xs">
+              
+              <!-- Email Card -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+                <span class="text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Email Address</span>
+                <div class="flex items-center justify-between gap-2">
+                  <a href="mailto:manojravi1707@gmail.com" class="text-white hover:text-cyan-400 font-mono text-sm transition break-all">
+                    manojravi1707@gmail.com
+                  </a>
+                  <button class="copy-pill shrink-0 p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-400 transition" data-clipboard="manojravi1707@gmail.com" title="Copy Email">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+                <span class="text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Mobile Number</span>
+                <div class="flex items-center justify-between gap-2">
+                  <a href="tel:+916379348375" class="text-white hover:text-emerald-400 font-mono text-sm transition">
+                    +91 6379348375
+                  </a>
+                  <button class="copy-pill shrink-0 p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-400 transition" data-clipboard="6379348375" title="Copy Phone">
+                    <i data-lucide="copy" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+                <span class="text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Current Location</span>
+                <div class="flex items-center gap-2 text-white font-medium text-sm">
+                  <i data-lucide="map-pin" class="w-4 h-4 text-indigo-400"></i>
+                  <span>Coimbatore, Tamil Nadu, India</span>
+                </div>
+              </div>
+
+              <!-- Professional Handle Card -->
+              <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5 space-y-2">
+                <span class="text-slate-400 block font-semibold uppercase text-[10px] tracking-wider">Online Profile</span>
+                <div class="flex items-center justify-between">
+                  <span class="text-white font-mono text-sm">Manojravi</span>
+                  <span class="tag-badge indigo">LinkedIn / GitHub</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Availability & Response Guarantee -->
+          <div class="glass-card p-6 space-y-4 border-emerald-500/20">
+            <div class="flex items-center gap-2">
+              <span class="relative flex h-3 w-3">
+                <span class="pulse-available absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+              </span>
+              <h4 class="text-sm font-bold text-white">Current Availability Status</h4>
+            </div>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <p>
+                • <strong>Role Types:</strong> Open to Full-Time Engineering, Embedded Firmware, RPA Automation, and Technical Support positions.
+              </p>
+              <p>
+                • <strong>Notice Period:</strong> Available for Immediate Joining.
+              </p>
+              <p>
+                • <strong>Response SLA:</strong> Inquiries received are answered within 24 hours.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Navigation Banner -->
+      <div class="glass-card p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6 border border-white/10">
+        <div>
+          <h3 class="text-xl font-display font-bold text-white">Return to the overview homepage?</h3>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1">
+            Browse all topics, stats, and achievements from the main landing portal.
+          </p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="btn-primary text-xs">← Back to Home Portal</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-12 border-t border-white/10 bg-[#050810]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-lg bg-indigo-600/30 border border-indigo-500/40 p-0.5 overflow-hidden">
+            <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover rounded-md">
+          </div>
+          <div>
+            <h4 class="font-display font-bold text-white text-sm">Manoj Ravi</h4>
+            <p class="text-xs text-slate-400">B.E - ECE Graduate • IoT & RPA</p>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-medium">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="about.html" class="hover:text-white transition">About</a>
+          <a href="projects.html" class="hover:text-white transition">Projects</a>
+          <a href="experience.html" class="hover:text-white transition">Experience</a>
+          <a href="skills.html" class="hover:text-white transition">Skills</a>
+          <a href="education.html" class="hover:text-white transition">Education</a>
+          <a href="contact.html" class="text-emerald-400 transition">Contact</a>
+        </div>
+
+        <p class="text-xs text-slate-500 text-center md:text-right">
+          © 2026 Manoj Ravi. Built with HTML5, Tailwind CSS & Git.
+        </p>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= RESUME MODAL ================= -->
+  <div id="resume-modal" class="modal-overlay">
+    <div class="modal-card p-6 sm:p-8 relative">
+      <button id="modal-close-btn" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+        <div class="flex items-center gap-4">
+          <div class="w-16 h-16 rounded-xl bg-indigo-600/30 border border-indigo-500/40 overflow-hidden shrink-0">
+            <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h2 class="text-2xl font-display font-bold text-white">MANOJ RAVI</h2>
+            <p class="text-sm font-mono text-indigo-400">B.E - Electronics & Communication Engineering</p>
+            <p class="text-xs text-slate-400 mt-1 flex flex-wrap gap-2">
+              <span>Coimbatore, Tamil Nadu</span> • 
+              <span>manojravi1707@gmail.com</span> • 
+              <span>+91 6379348375</span>
+            </p>
+          </div>
+        </div>
+
+        <button id="modal-print-btn" class="btn-primary text-xs !py-2 !px-4 self-start sm:self-auto shrink-0 flex items-center gap-2">
+          <i data-lucide="printer" class="w-4 h-4"></i>
+          <span>Print / Save PDF</span>
+        </button>
+      </div>
+
+      <div class="space-y-6 pt-6 text-slate-300 text-xs sm:text-sm">
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Profile Summary</h4>
+          <p class="leading-relaxed text-slate-300">
+            To obtain an entry-level position in a reputed organization where I can apply my skills and knowledge to contribute to the company's growth, learn from experienced professionals, and further develop my skills and expertise to advance my career.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Education</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between items-start">
+              <div>
+                <strong class="text-white block">Sri Shakthi Institute</strong>
+                <span class="text-slate-400">Electronics and Communication Engineering</span>
+              </div>
+              <div class="text-right">
+                <span class="text-indigo-400 font-mono">2020 – 2024</span>
+                <span class="block text-emerald-400 font-semibold">GPA: 7.8 / 10</span>
+              </div>
+            </div>
+            <div class="flex justify-between items-start pt-1">
+              <div>
+                <strong class="text-white block">Sathya Sai School</strong>
+                <span class="text-slate-400">Higher Secondary (HSC)</span>
+              </div>
+              <div class="text-right">
+                <span class="text-indigo-400 font-mono">2019 – 2020</span>
+                <span class="block text-emerald-400 font-semibold">GPA: 7.0 / 10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Projects</h4>
+          <div class="space-y-3">
+            <div>
+              <strong class="text-white">Raspberry Pi: Soil Analysis and Crop Recommendation</strong>
+              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+                <li>Soil Analysis using soil sensors (NPK, pH, Moisture).</li>
+                <li>Crop recommendation based on soil nutritional and physical analysis.</li>
+              </ul>
+            </div>
+            <div>
+              <strong class="text-white">UiPath and Automation: RE Framework, Excel data scraping and web automation</strong>
+              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+                <li>Working with the RE Framework for automatic page filling.</li>
+                <li>Data scraping and web application automation for easy data analysis and time reduction.</li>
+                <li>Email automation with attached document copy.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Work Experience</h4>
+          <div class="space-y-3">
+            <div>
+              <div class="flex justify-between items-baseline">
+                <strong class="text-white">Hexaware Technologies</strong>
+                <span class="text-indigo-400 font-mono text-xs">10 Jul 2025 – 3 Apr 2026</span>
+              </div>
+              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+                <li>Assisted customers with queries through clear communication and active listening.</li>
+                <li>Managed time efficiently to handle multiple customer interactions daily.</li>
+                <li>Delivered effective solutions while maintaining high service quality standards.</li>
+                <li>Enhanced customer satisfaction by resolving issues promptly.</li>
+              </ul>
+            </div>
+            <div>
+              <div class="flex justify-between items-baseline">
+                <strong class="text-white">Tech UC - Intern</strong>
+                <span class="text-indigo-400 font-mono text-xs">1 Jan – 1 Feb 2022</span>
+              </div>
+              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+                <li>Working with PIC micro-controller.</li>
+                <li>Interfacing PIC micro-controller with LCD display.</li>
+                <li>Basics of Embedded C & Communication protocols.</li>
+                <li>Stimulation of projects using Embedded Software.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Skills & Expertise</h4>
+            <p class="text-slate-300"><strong>Technical:</strong> C Programming, Python, MySQL, Hardware Support, Embedded C, Linux.</p>
+            <p class="text-slate-300 mt-1"><strong>Expertise:</strong> Leadership, Communication, Time Management.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Languages</h4>
+            <p class="text-slate-300">English: Fluent</p>
+            <p class="text-slate-300">Tamil: Fluent</p>
+            <p class="text-slate-400 mt-1"><strong>Location:</strong> Coimbatore, Tamil Nadu</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
