@@ -119,16 +119,6 @@
   // Contact Form
   const contactForm = document.getElementById('contact-form');
 
-  // Initialize
-  function init() {
-    if (window.lucide) lucide.createIcons();
-    attachNavbarScroll();
-    attachMobileMenu();
-    attachClipboardButtons();
-    attachResumeModal();
-    attachProjectModal();
-    attachContactForm();
-  }
 
   // Scroll effect on navbar
   function attachNavbarScroll() {
@@ -310,6 +300,442 @@
 
       showToast('Opening your email client to send message! 📨', 'success');
       contactForm.reset();
+    });
+  }
+
+  // ==========================================
+  // ANIMATION & VISUAL EFFECTS SUITE
+  // ==========================================
+
+  // Scroll Reveal Animations
+  function initScrollReveal() {
+    const elements = document.querySelectorAll('.reveal-fade-up, .reveal-fade-left, .reveal-fade-right, .reveal-scale-up');
+    if (!elements.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    elements.forEach(el => observer.observe(el));
+  }
+
+  // Typewriter Text Cycler for Hero
+  function initTypewriter() {
+    const target = document.getElementById('typewriter-text');
+    if (!target) return;
+
+    const titles = [
+      "Electronics & Communication",
+      "IoT & Embedded Systems",
+      "UiPath RPA Developer",
+      "Python & C Programming",
+      "Customer Support & Operations"
+    ];
+
+    let titleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let speed = 90;
+
+    function type() {
+      const current = titles[titleIndex];
+      if (isDeleting) {
+        target.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+        speed = 45;
+      } else {
+        target.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        speed = 90;
+      }
+
+      if (!isDeleting && charIndex === current.length) {
+        isDeleting = true;
+        speed = 2000; // Pause at full text
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        titleIndex = (titleIndex + 1) % titles.length;
+        speed = 400; // Pause before typing new
+      }
+
+      setTimeout(type, speed);
+    }
+
+    type();
+  }
+
+  // Interactive Card Spotlight & 3D Tilt
+  function initSpotlightAndTilt() {
+    const cards = document.querySelectorAll('.glass-card');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--spotlight-x', `${x}px`);
+        card.style.setProperty('--spotlight-y', `${y}px`);
+
+        if (card.classList.contains('tilt-card')) {
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -6;
+          const rotateY = ((x - centerX) / centerX) * 6;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+        }
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (card.classList.contains('tilt-card')) {
+          card.style.transform = '';
+        }
+      });
+    });
+  }
+
+  // Number Counter Animation for Stats
+  function initStatCounters() {
+    const counters = document.querySelectorAll('[data-counter]');
+    if (!counters.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(c => observer.observe(c));
+
+    function animateCounter(el) {
+      const targetStr = el.dataset.counter;
+      const isFloat = targetStr.includes('.');
+      const targetVal = parseFloat(targetStr);
+      const duration = 1500;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3); // Ease-out cubic
+        const current = ease * targetVal;
+
+        el.textContent = isFloat ? current.toFixed(1) : Math.floor(current);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          el.textContent = targetStr;
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+  }
+
+  // Dynamic Skill Bars Fill Animation
+  function initAnimatedSkillBars() {
+    const skillFills = document.querySelectorAll('.skill-bar-fill[data-width]');
+    if (!skillFills.length) return;
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.width = el.dataset.width;
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    skillFills.forEach(bar => observer.observe(bar));
+  }
+
+  // Interactive Particle Canvas Network
+  function initParticleCanvas() {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const particleCount = 40;
+    let mouse = { x: null, y: null, radius: 110 };
+
+    function resize() {
+      if (!canvas.parentElement) return;
+      width = canvas.width = canvas.parentElement.offsetWidth;
+      height = canvas.height = canvas.parentElement.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    window.addEventListener('mousemove', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+    });
+
+    window.addEventListener('mouseout', () => {
+      mouse.x = null;
+      mouse.y = null;
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.65;
+        this.vy = (Math.random() - 0.5) * 0.65;
+        this.radius = Math.random() * 2 + 1;
+        this.color = Math.random() > 0.5 ? 'rgba(99, 102, 241, ' : 'rgba(6, 182, 212, ';
+        this.alpha = Math.random() * 0.45 + 0.25;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            this.x -= (dx / dist) * force * 2.5;
+            this.y -= (dy / dist) * force * 2.5;
+          }
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color + this.alpha + ')';
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    function connect() {
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a + 1; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < 115) {
+            const alpha = (1 - dist / 115) * 0.22;
+            ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      connect();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+
+  // Floating Back-to-Top Button
+  function initBackToTop() {
+    const btn = document.getElementById('back-to-top');
+    const circle = document.querySelector('#back-to-top circle.progress-circle');
+    if (!btn) return;
+
+    const totalDash = 138;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? scrollY / docHeight : 0;
+
+      if (scrollY > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+
+      if (circle) {
+        const offset = totalDash - (progress * totalDash);
+        circle.style.strokeDashoffset = offset;
+      }
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // Extended init
+  function init() {
+    if (window.lucide) lucide.createIcons();
+    attachNavbarScroll();
+    attachMobileMenu();
+    attachClipboardButtons();
+    attachResumeModal();
+    attachProjectModal();
+    attachContactForm();
+    initScrollReveal();
+    initTypewriter();
+    initSpotlightAndTilt();
+    initStatCounters();
+    initAnimatedSkillBars();
+    initParticleCanvas();
+    initBackToTop();
+    // New advanced animations
+    initScrollProgressBar();
+    initCursorGlow();
+    initParallaxOrbs();
+    initRippleEffect();
+    initMagneticButtons();
+  }
+
+  // ==========================================
+  // NEW ADVANCED ANIMATION SYSTEMS
+  // ==========================================
+
+  // 1. Scroll Progress Bar
+  function initScrollProgressBar() {
+    const bar = document.getElementById('scroll-progress-bar');
+    if (!bar) return;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docH > 0 ? (scrollY / docH) * 100 : 0;
+      bar.style.width = pct.toFixed(2) + '%';
+    }, { passive: true });
+  }
+
+  // 2. Cursor Glow Trail Canvas
+  function initCursorGlow() {
+    const canvas = document.getElementById('cursor-glow-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let trails = [];
+    let mouse = { x: -200, y: -200 };
+
+    function resize() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      trails.push({ x: e.clientX, y: e.clientY, r: 18, alpha: 0.35 });
+      if (trails.length > 22) trails.shift();
+    }, { passive: true });
+
+    function drawGlow() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Main cursor aura
+      const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 60);
+      grad.addColorStop(0, 'rgba(99,102,241,0.18)');
+      grad.addColorStop(0.5, 'rgba(6,182,212,0.08)');
+      grad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(mouse.x, mouse.y, 60, 0, Math.PI * 2);
+      ctx.fill();
+      // Trail rings
+      trails.forEach((t, i) => {
+        t.alpha -= 0.015;
+        if (t.alpha <= 0) return;
+        ctx.beginPath();
+        ctx.arc(t.x, t.y, t.r * (1 - i / trails.length), 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(99,102,241,${t.alpha * (i / trails.length)})`;
+        ctx.fill();
+      });
+      trails = trails.filter(t => t.alpha > 0);
+      requestAnimationFrame(drawGlow);
+    }
+    drawGlow();
+  }
+
+  // 3. Parallax Floating Orbs
+  function initParallaxOrbs() {
+    const orbs = document.querySelectorAll('.floating-orb');
+    if (!orbs.length) return;
+    const speeds = [0.04, 0.07, 0.025];
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      orbs.forEach((orb, i) => {
+        const speed = speeds[i % speeds.length];
+        const yShift = scrollY * speed;
+        const xShift = scrollY * speed * 0.4;
+        orb.style.transform = `translate(${i % 2 === 0 ? xShift : -xShift}px, ${yShift}px)`;
+      });
+    }, { passive: true });
+  }
+
+  // 4. Ripple Click Effect on Buttons
+  function initRippleEffect() {
+    const targets = document.querySelectorAll('.btn-primary, .btn-secondary, .copy-pill');
+    targets.forEach(btn => {
+      btn.classList.add('ripple-container');
+      btn.addEventListener('click', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top  - size / 2;
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple-wave';
+        ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+        btn.appendChild(ripple);
+        ripple.addEventListener('animationend', () => ripple.remove());
+      });
+    });
+  }
+
+  // 5. Magnetic Button Effect
+  function initMagneticButtons() {
+    const btns = document.querySelectorAll('.btn-primary, .btn-secondary');
+    btns.forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const dx = e.clientX - (rect.left + rect.width  / 2);
+        const dy = e.clientY - (rect.top  + rect.height / 2);
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = Math.max(rect.width, rect.height);
+        if (dist < maxDist) {
+          const pull = 0.28;
+          btn.style.transform = `translate(${dx * pull}px, ${dy * pull}px)`;
+        }
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
     });
   }
 

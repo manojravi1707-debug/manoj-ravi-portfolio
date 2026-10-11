@@ -45,8 +45,14 @@
 </head>
 <body class="bg-[#070b14] text-slate-100 font-sans selection:bg-indigo-500 selection:text-white">
 
+  <!-- Scroll Progress Bar -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- Cursor Glow Canvas -->
+  <canvas id="cursor-glow-canvas"></canvas>
+
   <!-- ================= TOP NAVIGATION ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 page-load-nav" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo / Profile -->
@@ -77,7 +83,7 @@
           <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
           <span>View Resume</span>
         </button>
-        <a href="contact.html" class="btn-primary text-xs !py-2 !px-4">
+        <a href="contact.html" class="btn-primary shimmer-btn text-xs !py-2 !px-4">
           <span>Get in Touch</span>
         </a>
       </div>
@@ -100,25 +106,29 @@
       <a href="contact.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Contact & Connect</a>
       <div class="pt-2 flex flex-col gap-2">
         <button id="mobile-resume-btn" class="btn-secondary w-full text-xs !py-2">View Resume</button>
-        <a href="contact.html" class="btn-primary w-full text-xs !py-2 text-center mobile-nav-link">Contact Me</a>
+        <a href="contact.html" class="btn-primary shimmer-btn w-full text-xs !py-2 text-center mobile-nav-link">Contact Me</a>
       </div>
     </div>
   </header>
 
   <!-- ================= HERO SECTION ================= -->
   <section id="hero" class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
-    <!-- Ambient glowing orbs in background -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/3 right-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- Interactive Background Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Ambient glowing floating orbs in background -->
+    <div class="floating-orb w-96 h-96 bg-indigo-600/20 top-1/4 left-1/2 -translate-x-1/2"></div>
+    <div class="floating-orb delay-1 w-80 h-80 bg-cyan-500/15 top-1/3 right-10"></div>
+    <div class="floating-orb delay-2 w-72 h-72 bg-emerald-500/10 bottom-10 left-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <!-- Left Column: Introduction -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-fade-left">
           
           <!-- Availability Tag -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/30 text-xs">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/30 text-xs shadow-lg shadow-indigo-500/10 page-load-anim-1">
             <span class="relative flex h-2.5 w-2.5">
               <span class="pulse-available absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -128,28 +138,26 @@
             <span class="text-cyan-400 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Coimbatore, Tamil Nadu</span>
           </div>
 
-          <!-- Main Headline -->
-          <div class="space-y-2">
+          <!-- Main Headline with Animated Typewriter -->
+          <div class="space-y-2 page-load-anim-2">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
               Hello, I'm <span class="text-gradient">Manoj Ravi</span>
             </h1>
-            <p class="text-xl sm:text-2xl font-display font-semibold text-slate-300 flex flex-wrap items-center justify-center lg:justify-start gap-2">
+            <p class="text-xl sm:text-2xl font-display font-semibold text-slate-300 flex flex-wrap items-center justify-center lg:justify-start gap-2 min-h-[38px]">
               <span>B.E Graduate</span>
               <span class="text-indigo-400">•</span>
-              <span class="text-gradient-cyan">Electronics & Communication</span>
-              <span class="text-indigo-400">•</span>
-              <span class="text-indigo-300">IoT & Automation</span>
+              <span id="typewriter-text" class="text-gradient-cyan">Electronics & Communication</span><span class="typewriter-cursor"></span>
             </p>
           </div>
 
           <!-- Bio Description -->
-          <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+          <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed page-load-anim-3">
             Passionate electronics engineering graduate blending hardware acumen with modern software capabilities. Experienced in <strong class="text-slate-200">Embedded C, PIC Microcontrollers, Raspberry Pi IoT systems</strong>, and enterprise <strong class="text-slate-200">UiPath Robotic Process Automation (RE Framework)</strong>.
           </p>
 
           <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-            <a href="projects.html" class="btn-primary">
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 page-load-anim-4">
+            <a href="projects.html" class="btn-primary shimmer-btn">
               <i data-lucide="sparkles" class="w-4 h-4"></i>
               <span>Explore My Projects</span>
             </a>
@@ -166,14 +174,14 @@
           </div>
 
           <!-- Quick Connect Pills -->
-          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400">
-            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition" data-clipboard="manojravi1707@gmail.com" title="Click to copy email">
+          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 page-load-anim-5">
+            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition hover:scale-105 active:scale-95" data-clipboard="manojravi1707@gmail.com" title="Click to copy email">
               <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
               <span>manojravi1707@gmail.com</span>
               <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
             </button>
 
-            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition" data-clipboard="6379348375" title="Click to copy phone number">
+            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition hover:scale-105 active:scale-95" data-clipboard="6379348375" title="Click to copy phone number">
               <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
               <span>+91 6379348375</span>
               <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
@@ -182,12 +190,12 @@
 
         </div>
 
-        <!-- Right Column: Interactive Profile Card / Highlights -->
-        <div class="lg:col-span-5">
-          <div class="glass-card p-6 sm:p-8 relative space-y-6">
+        <!-- Right Column: Interactive 3D Profile Card / Highlights -->
+        <div class="lg:col-span-5 reveal-fade-right page-load-card">
+          <div class="glass-card tilt-card p-6 sm:p-8 relative space-y-6">
             
             <!-- Glowing top corner badge -->
-            <div class="absolute -top-3 -right-3">
+            <div class="absolute -top-3 -right-3 z-10">
               <span class="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-indigo-600 text-white shadow-lg shadow-indigo-600/40 border border-indigo-400">
                 Verified Candidate
               </span>
@@ -195,7 +203,7 @@
 
             <!-- Profile Summary & Photo Representation -->
             <div class="flex items-center gap-4">
-              <div class="relative shrink-0">
+              <div class="relative shrink-0 avatar-glow">
                 <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-xl shadow-indigo-500/30 overflow-hidden group">
                   <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105">
                 </div>
@@ -213,23 +221,29 @@
               </div>
             </div>
 
-            <!-- Academic & Project Metric Grid -->
+            <!-- Academic & Project Metric Grid with Animated Counter -->
             <div class="grid grid-cols-2 gap-3 pt-2">
               <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
                 <span class="text-[11px] text-slate-400 uppercase font-semibold">Engineering GPA</span>
-                <div class="text-2xl font-bold font-display text-white">7.8 <span class="text-xs text-slate-500">/ 10</span></div>
+                <div class="text-2xl font-bold font-display text-white">
+                  <span data-counter="7.8">7.8</span> <span class="text-xs text-slate-500">/ 10</span>
+                </div>
                 <p class="text-[10px] text-cyan-400">Sri Shakthi Institute</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
                 <span class="text-[11px] text-slate-400 uppercase font-semibold">Higher Secondary</span>
-                <div class="text-2xl font-bold font-display text-white">7.0 <span class="text-xs text-slate-500">/ 10</span></div>
+                <div class="text-2xl font-bold font-display text-white">
+                  <span data-counter="7.0">7.0</span> <span class="text-xs text-slate-500">/ 10</span>
+                </div>
                 <p class="text-[10px] text-indigo-400">Sathya Sai School</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
                 <span class="text-[11px] text-slate-400 uppercase font-semibold">Key Projects</span>
-                <div class="text-2xl font-bold font-display text-white">2+</div>
+                <div class="text-2xl font-bold font-display text-white">
+                  <span data-counter="2">2</span>+
+                </div>
                 <p class="text-[10px] text-emerald-400">IoT Sensors & UiPath RPA</p>
               </div>
 
@@ -264,7 +278,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16">
+      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16 reveal-fade-up">
         <span class="hero-badge">Explore Topics</span>
         <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
           Detailed Portfolio Sections
@@ -274,11 +288,11 @@
         </p>
       </div>
 
-      <!-- Topics Grid -->
+      <!-- Topics Grid with Staggered Scroll Reveal & 3D Tilt -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Topic 1: About Me -->
-        <a href="about.html" class="glass-card p-6 flex flex-col justify-between group hover:border-indigo-500/50">
+        <a href="about.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-indigo-500/50 reveal-fade-up delay-100">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
               <i data-lucide="user" class="w-6 h-6"></i>
@@ -302,7 +316,7 @@
         </a>
 
         <!-- Topic 2: Projects -->
-        <a href="projects.html" class="glass-card p-6 flex flex-col justify-between group hover:border-cyan-500/50">
+        <a href="projects.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-cyan-500/50 reveal-fade-up delay-200">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
               <i data-lucide="cpu" class="w-6 h-6"></i>
@@ -326,7 +340,7 @@
         </a>
 
         <!-- Topic 3: Work Experience -->
-        <a href="experience.html" class="glass-card p-6 flex flex-col justify-between group hover:border-emerald-500/50">
+        <a href="experience.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-emerald-500/50 reveal-fade-up delay-300">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
               <i data-lucide="briefcase" class="w-6 h-6"></i>
@@ -350,7 +364,7 @@
         </a>
 
         <!-- Topic 4: Technical Skills -->
-        <a href="skills.html" class="glass-card p-6 flex flex-col justify-between group hover:border-indigo-500/50">
+        <a href="skills.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-indigo-500/50 reveal-fade-up delay-100">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
               <i data-lucide="code" class="w-6 h-6"></i>
@@ -374,7 +388,7 @@
         </a>
 
         <!-- Topic 5: Education Credentials -->
-        <a href="education.html" class="glass-card p-6 flex flex-col justify-between group hover:border-cyan-500/50">
+        <a href="education.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-cyan-500/50 reveal-fade-up delay-200">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
               <i data-lucide="graduation-cap" class="w-6 h-6"></i>
@@ -398,7 +412,7 @@
         </a>
 
         <!-- Topic 6: Contact & Connect -->
-        <a href="contact.html" class="glass-card p-6 flex flex-col justify-between group hover:border-emerald-500/50">
+        <a href="contact.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-emerald-500/50 reveal-fade-up delay-300">
           <div class="space-y-4">
             <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
               <i data-lucide="mail" class="w-6 h-6"></i>
@@ -427,7 +441,7 @@
   <!-- ================= HIGHLIGHTED PROJECTS PREVIEW ================= -->
   <section class="py-20 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-fade-up">
         <div>
           <span class="hero-badge">Featured Work</span>
           <h2 class="text-3xl font-display font-bold text-white mt-2">
@@ -437,7 +451,7 @@
             Hands-on prototypes linking physical electronics with intelligent automation.
           </p>
         </div>
-        <a href="projects.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2">
+        <a href="projects.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2 hover:translate-x-1 transition-transform">
           <span>View All Projects in Detail</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -446,7 +460,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         
         <!-- Project 1 Card -->
-        <div class="glass-card p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between space-y-6 reveal-fade-left">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="tag-badge cyan">IoT & Embedded Systems</span>
@@ -478,14 +492,14 @@
               <span class="tag-badge">Python</span>
               <span class="tag-badge">Sensors</span>
             </div>
-            <a href="projects.html#soil-analysis" class="btn-primary text-xs !py-2 !px-3">
+            <a href="projects.html#soil-analysis" class="btn-primary shimmer-btn text-xs !py-2 !px-3">
               <span>Deep Dive Details →</span>
             </a>
           </div>
         </div>
 
         <!-- Project 2 Card -->
-        <div class="glass-card p-6 sm:p-8 flex flex-col justify-between space-y-6">
+        <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between space-y-6 reveal-fade-right">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
               <span class="tag-badge indigo">Robotic Process Automation</span>
@@ -517,7 +531,7 @@
               <span class="tag-badge">RE Framework</span>
               <span class="tag-badge">Excel Automation</span>
             </div>
-            <a href="projects.html#uipath-automation" class="btn-primary text-xs !py-2 !px-3">
+            <a href="projects.html#uipath-automation" class="btn-primary shimmer-btn text-xs !py-2 !px-3">
               <span>Deep Dive Details →</span>
             </a>
           </div>
@@ -530,7 +544,7 @@
   <!-- ================= WORK EXPERIENCE PREVIEW ================= -->
   <section class="py-20 relative border-t border-white/5 bg-[#0a0f1d]/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-fade-up">
         <div>
           <span class="hero-badge">Work History</span>
           <h2 class="text-3xl font-display font-bold text-white mt-2">
@@ -540,7 +554,7 @@
             Proven track record in customer operations and embedded microcontroller engineering.
           </p>
         </div>
-        <a href="experience.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2">
+        <a href="experience.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2 hover:translate-x-1 transition-transform">
           <span>View Full Experience Timeline</span>
           <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
@@ -549,7 +563,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- Hexaware Card -->
-        <div class="glass-card p-6 space-y-4 flex flex-col justify-between">
+        <div class="glass-card tilt-card p-6 space-y-4 flex flex-col justify-between reveal-fade-left">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono text-cyan-400">10 Jul 2025 – 3 Apr 2026</span>
@@ -563,15 +577,15 @@
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">Time Management • Communication</span>
-            <a href="experience.html#hexaware" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+            <a href="experience.html#hexaware" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group">
               <span>View Details</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
             </a>
           </div>
         </div>
 
         <!-- Tech UC Intern Card -->
-        <div class="glass-card p-6 space-y-4 flex flex-col justify-between">
+        <div class="glass-card tilt-card p-6 space-y-4 flex flex-col justify-between reveal-fade-right">
           <div>
             <div class="flex items-center justify-between">
               <span class="text-xs font-mono text-indigo-400">1 Jan 2022 – 1 Feb 2022</span>
@@ -585,9 +599,9 @@
           </div>
           <div class="pt-4 border-t border-white/10 flex items-center justify-between">
             <span class="text-xs text-slate-400">PIC Controller • Embedded C</span>
-            <a href="experience.html#tech-uc" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+            <a href="experience.html#tech-uc" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group">
               <span>View Details</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
             </a>
           </div>
         </div>
@@ -629,6 +643,14 @@
     </div>
   </footer>
 
+  <!-- ================= FLOATING BACK TO TOP BUTTON ================= -->
+  <button id="back-to-top" aria-label="Back to top">
+    <svg class="progress-ring" viewBox="0 0 48 48">
+      <circle class="progress-circle" stroke="#06b6d4" stroke-width="2.5" fill="transparent" r="22" cx="24" cy="24" />
+    </svg>
+    <i data-lucide="chevron-up" class="w-5 h-5 relative z-10"></i>
+  </button>
+
   <!-- ================= RESUME MODAL ================= -->
   <div id="resume-modal" class="modal-overlay">
     <div class="modal-card p-6 sm:p-8 relative">
@@ -656,7 +678,7 @@
         </div>
 
         <!-- Print action -->
-        <button id="modal-print-btn" class="btn-primary text-xs !py-2 !px-4 self-start sm:self-auto shrink-0 flex items-center gap-2">
+        <button id="modal-print-btn" class="btn-primary shimmer-btn text-xs !py-2 !px-4 self-start sm:self-auto shrink-0 flex items-center gap-2">
           <i data-lucide="printer" class="w-4 h-4"></i>
           <span>Print / Save PDF</span>
         </button>
