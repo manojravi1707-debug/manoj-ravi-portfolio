@@ -497,7 +497,7 @@
         this.vx = (Math.random() - 0.5) * 0.65;
         this.vy = (Math.random() - 0.5) * 0.65;
         this.radius = Math.random() * 2 + 1;
-        const palette = ['rgba(124, 58, 237, ', 'rgba(255, 87, 34, ', 'rgba(163, 230, 53, '];
+        const palette = ['rgba(227, 66, 52, ', 'rgba(212, 255, 63, ', 'rgba(203, 179, 232, '];
         this.color = palette[Math.floor(Math.random() * palette.length)];
         this.alpha = Math.random() * 0.45 + 0.25;
       }
@@ -681,8 +681,8 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       // Main cursor aura
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 60);
-      grad.addColorStop(0, 'rgba(124,58,237,0.22)');
-      grad.addColorStop(0.5, 'rgba(255,87,34,0.12)');
+      grad.addColorStop(0, 'rgba(227,66,52,0.25)');
+      grad.addColorStop(0.5, 'rgba(212,255,63,0.18)');
       grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -694,7 +694,7 @@
         if (t.alpha <= 0) return;
         ctx.beginPath();
         ctx.arc(t.x, t.y, t.r * (1 - i / trails.length), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(124,58,237,${t.alpha * (i / trails.length)})`;
+        ctx.fillStyle = `rgba(227,66,52,${t.alpha * (i / trails.length)})`;
         ctx.fill();
       });
       trails = trails.filter(t => t.alpha > 0);

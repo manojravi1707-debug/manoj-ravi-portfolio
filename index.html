@@ -9,7 +9,7 @@
   <!-- Google Fonts: Inter & Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,8 +17,8 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="styles.css?v=2.0">
+  <!-- Custom Styles with Cache-Buster -->
+  <link rel="stylesheet" href="styles.css?v=3.0">
 
   <script>
     tailwind.config = {
@@ -31,43 +31,46 @@
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            cyberDark: '#caaafc',
-            cyberSurface: '#f8f5fe',
+            color1: '#CBB3E8',
+            color2: '#D4FF3F',
+            color3: '#E34234',
+            cyberDark: '#CBB3E8',
+            cyberSurface: '#baa1db',
             cyberCard: '#ffffff',
-            primaryIndigo: '#7c3aed',
-            accentCoral: '#ff5722',
-            accentLime: '#a3e635',
+            primaryIndigo: '#E34234',
+            accentCoral: '#E34234',
+            accentLime: '#D4FF3F',
           }
         }
       }
     }
   </script>
 </head>
-<body class="bg-[#caaafc] text-slate-900 font-sans selection:bg-purple-600 selection:text-white">
+<body class="bg-[#CBB3E8] text-slate-900 font-sans selection:bg-[#E34234] selection:text-white">
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress-bar"></div>
 
-  <!-- Cursor Glow Canvas -->
+  <!-- Cursor Glow Overlay Canvas -->
   <canvas id="cursor-glow-canvas"></canvas>
 
   <!-- ================= TOP NAVIGATION ================= -->
-  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300 page-load-nav" id="navbar">
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Brand Logo / Profile -->
       <a href="index.html" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-          <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-[10px]">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#E34234] via-[#D4FF3F] to-[#CBB3E8] p-0.5 shadow-md shadow-[#E34234]/20 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
+          <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-[14px]">
         </div>
         <div>
-          <span class="font-display font-bold text-lg text-white group-hover:text-indigo-400 transition-colors">Manoj Ravi</span>
-          <p class="text-xs text-slate-400 font-mono">B.E • ECE Graduate</p>
+          <span class="font-display font-black text-xl text-slate-900 group-hover:text-[#E34234] transition-colors tracking-tight">Manoj Ravi</span>
+          <p class="text-xs text-slate-800 font-mono font-semibold">B.E • ECE Graduate</p>
         </div>
       </a>
 
       <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-900">
         <a href="index.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link">Projects</a>
@@ -79,110 +82,110 @@
 
       <!-- Action Buttons -->
       <div class="hidden sm:flex items-center gap-3">
-        <button id="view-resume-btn" class="btn-secondary text-xs !py-2 !px-4 font-medium flex items-center gap-2">
-          <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
-          <span>View Resume</span>
+        <button id="view-resume-btn" class="btn-secondary text-xs !py-2.5 !px-5 font-semibold flex items-center gap-2">
+          <i data-lucide="file-text" class="w-4 h-4 text-[#E34234]"></i>
+          <span>Resume</span>
         </button>
-        <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary shimmer-btn text-xs !py-2 !px-4">
+        <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary text-xs !py-2.5 !px-5">
+          <i data-lucide="mail" class="w-4 h-4"></i>
           <span>Contact Me</span>
         </a>
       </div>
 
       <!-- Mobile Hamburger Button -->
-      <button id="mobile-menu-btn" class="md:hidden text-slate-300 hover:text-white p-2">
+      <button id="mobile-menu-btn" class="md:hidden text-slate-900 p-2 hover:text-[#E34234]">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
 
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-white/10 px-6 py-5 space-y-4">
-      <a href="index.html" class="block text-indigo-400 font-semibold mobile-nav-link">Home (Overview)</a>
-      <a href="about.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">About Me</a>
-      <a href="projects.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Projects Portfolio</a>
-      <a href="experience.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Work Experience</a>
-      <a href="skills.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Technical Skills</a>
-      <a href="education.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Education Credentials</a>
-      <a href="contact.html" class="block text-slate-300 hover:text-indigo-400 mobile-nav-link">Contact & Connect</a>
+    <div id="mobile-menu" class="hidden md:hidden glass-nav border-t-2 border-white/40 px-6 py-5 space-y-4">
+      <a href="index.html" class="block text-[#E34234] font-bold mobile-nav-link">Home (Overview)</a>
+      <a href="about.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">About Me</a>
+      <a href="projects.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">Projects Portfolio</a>
+      <a href="experience.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">Work Experience</a>
+      <a href="skills.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">Technical Skills</a>
+      <a href="education.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">Education Credentials</a>
+      <a href="contact.html" class="block text-slate-900 hover:text-[#E34234] font-semibold mobile-nav-link">Contact & Connect</a>
       <div class="pt-2 flex flex-col gap-2">
-        <button id="mobile-resume-btn" class="btn-secondary w-full text-xs !py-2">View Resume</button>
-        <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary shimmer-btn w-full text-xs !py-2 text-center mobile-nav-link">Contact Me</a>
+        <button id="mobile-resume-btn" class="btn-secondary w-full text-xs !py-2.5">View Resume</button>
+        <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary w-full text-xs !py-2.5 text-center mobile-nav-link">Contact Me</a>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO SECTION ================= -->
-  <section id="hero" class="min-h-screen pt-32 pb-20 flex items-center relative overflow-hidden">
+  <!-- ================= HERO SECTION (BESPOKE TRICOLOR DESIGN) ================= -->
+  <section id="hero" class="pt-32 pb-16 relative overflow-hidden">
     <!-- Interactive Background Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
 
-    <!-- Ambient glowing floating orbs in background -->
-    <div class="floating-orb w-96 h-96 bg-indigo-600/20 top-1/4 left-1/2 -translate-x-1/2"></div>
-    <div class="floating-orb delay-1 w-80 h-80 bg-cyan-500/15 top-1/3 right-10"></div>
-    <div class="floating-orb delay-2 w-72 h-72 bg-emerald-500/10 bottom-10 left-10"></div>
+    <!-- Ambient glowing floating orbs in tricolor -->
+    <div class="floating-orb w-96 h-96 top-10 left-1/4 -translate-x-1/2"></div>
+    <div class="floating-orb delay-1 w-80 h-80 top-1/4 right-8"></div>
+    <div class="floating-orb delay-2 w-72 h-72 bottom-5 left-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
-        <!-- Left Column: Introduction -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left reveal-fade-left">
+        <!-- Left Column: Introduction & Core Mission -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           
-          <!-- Availability Tag -->
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 border border-indigo-500/30 text-xs shadow-lg shadow-indigo-500/10 page-load-anim-1">
+          <!-- Tricolor Availability Pill -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4FF3F] border border-black/10 text-xs font-bold text-slate-950 shadow-md">
             <span class="relative flex h-2.5 w-2.5">
-              <span class="pulse-available absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              <span class="pulse-available absolute inline-flex h-full w-full rounded-full opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#E34234]"></span>
             </span>
-            <span class="text-slate-300 font-medium">Open to Full-Time Engineering Roles</span>
+            <span>Available for Full-Time Roles • 2024 Graduate</span>
             <span class="text-slate-500">•</span>
-            <span class="text-cyan-400 flex items-center gap-1"><i data-lucide="map-pin" class="w-3 h-3"></i> Coimbatore, Tamil Nadu</span>
+            <span class="text-slate-900 flex items-center gap-1 font-semibold"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#E34234]"></i> Coimbatore, TN</span>
           </div>
 
-          <!-- Main Headline with Animated Typewriter -->
-          <div class="space-y-2 page-load-anim-2">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
-              Hello, I'm <span class="text-gradient">Manoj Ravi</span>
+          <!-- Main Editorial Headline -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight text-slate-900 leading-[1.12]">
+              Building Smart <span class="tricolor-gradient-text">Hardware & Automation</span>
             </h1>
-            <p class="text-xl sm:text-2xl font-display font-semibold text-slate-300 flex flex-wrap items-center justify-center lg:justify-start gap-2 min-h-[38px]">
-              <span>B.E Graduate</span>
-              <span class="text-indigo-400">•</span>
+            <p class="text-xl sm:text-2xl font-display font-bold text-slate-800 flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              <span>Hi, I'm Manoj Ravi</span>
+              <span class="text-[#E34234]">•</span>
               <span id="typewriter-text" class="text-gradient-cyan">Electronics & Communication</span><span class="typewriter-cursor"></span>
             </p>
           </div>
 
           <!-- Bio Description -->
-          <p class="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed page-load-anim-3">
-            Passionate electronics engineering graduate blending hardware acumen with modern software capabilities. Experienced in <strong class="text-slate-200">Embedded C, PIC Microcontrollers, Raspberry Pi IoT systems</strong>, and enterprise <strong class="text-slate-200">UiPath Robotic Process Automation (RE Framework)</strong>.
+          <p class="text-base sm:text-lg text-slate-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
+            Electronics and Communication Engineering graduate connecting physical sensor hardware with modern enterprise automation. Experienced in <strong class="text-slate-950 font-bold bg-[#D4FF3F]/35 px-1.5 py-0.5 rounded">Embedded C, PIC Microcontrollers, Raspberry Pi IoT</strong>, and enterprise <strong class="text-slate-950 font-bold bg-[#E34234]/15 px-1.5 py-0.5 rounded text-[#E34234]">UiPath Robotic Process Automation (RE Framework)</strong>.
           </p>
 
-          <!-- Action Buttons -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2 page-load-anim-4">
-            <a href="projects.html" class="btn-primary shimmer-btn">
+          <!-- Tricolor Action Buttons Suite -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+              <span>Contact Me (Email)</span>
+            </a>
+
+            <a href="projects.html" class="btn-lime">
               <i data-lucide="sparkles" class="w-4 h-4"></i>
-              <span>Explore My Projects</span>
+              <span>Explore Projects</span>
             </a>
 
             <button id="hero-resume-btn" class="btn-secondary">
-              <i data-lucide="download" class="w-4 h-4 text-cyan-400"></i>
+              <i data-lucide="download" class="w-4 h-4 text-[#E34234]"></i>
               <span>Download Resume</span>
             </button>
-
-            <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-secondary">
-              <i data-lucide="mail" class="w-4 h-4 text-purple-600"></i>
-              <span>Contact Me</span>
-            </a>
           </div>
 
           <!-- Quick Connect Pills -->
-          <div class="pt-6 border-t border-white/10 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-400 page-load-anim-5">
-            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition hover:scale-105 active:scale-95" data-clipboard="manojravi1707@gmail.com" title="Click to copy email">
-              <i data-lucide="mail" class="w-3.5 h-3.5 text-indigo-400"></i>
+          <div class="pt-4 border-t-2 border-white/50 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs text-slate-800 font-semibold">
+            <a href="mailto:manojravi1707@gmail.com?subject=Inquiry%20for%20Manoj%20Ravi" class="copy-pill flex items-center gap-2 px-3.5 py-2 hover:scale-105 active:scale-95 transition" title="Click to email directly">
+              <i data-lucide="mail" class="w-3.5 h-3.5 text-[#E34234]"></i>
               <span>manojravi1707@gmail.com</span>
-              <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
-            </button>
+            </a>
 
-            <button class="copy-pill flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-white/5 hover:border-indigo-500/40 hover:text-white transition hover:scale-105 active:scale-95" data-clipboard="6379348375" title="Click to copy phone number">
-              <i data-lucide="phone" class="w-3.5 h-3.5 text-cyan-400"></i>
+            <button class="copy-pill flex items-center gap-2 px-3.5 py-2 hover:scale-105 active:scale-95 transition" data-clipboard="6379348375" title="Click to copy phone number">
+              <i data-lucide="phone" class="w-3.5 h-3.5 text-[#121800]"></i>
               <span>+91 6379348375</span>
               <i data-lucide="copy" class="w-3 h-3 text-slate-500 ml-1"></i>
             </button>
@@ -190,77 +193,78 @@
 
         </div>
 
-        <!-- Right Column: Interactive 3D Profile Card / Highlights -->
-        <div class="lg:col-span-5 reveal-fade-right page-load-card">
-          <div class="glass-card tilt-card p-6 sm:p-8 relative space-y-6">
+        <!-- Right Column: Interactive 3D Tricolor Hero Showcase Card -->
+        <div class="lg:col-span-5">
+          <div class="glass-card tilt-card p-6 sm:p-7 relative space-y-5">
             
-            <!-- Glowing top corner badge -->
-            <div class="absolute -top-3 -right-3 z-10">
-              <span class="px-3 py-1 rounded-full text-[11px] font-bold tracking-wider uppercase bg-indigo-600 text-white shadow-lg shadow-indigo-600/40 border border-indigo-400">
+            <!-- Top Verified Candidate Badge -->
+            <div class="flex items-center justify-between border-b border-black/10 pb-4">
+              <span class="px-3.5 py-1 rounded-full text-xs font-black tracking-wider uppercase bg-[#E34234] text-white shadow-md shadow-[#E34234]/30">
                 Verified Candidate
               </span>
+              <span class="text-xs font-mono font-bold text-slate-800">2020 – 2024</span>
             </div>
 
             <!-- Profile Summary & Photo Representation -->
             <div class="flex items-center gap-4">
               <div class="relative shrink-0 avatar-glow">
-                <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-xl shadow-indigo-500/30 overflow-hidden group">
-                  <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-2xl transition-transform duration-300 group-hover:scale-105">
+                <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-[#E34234] via-[#D4FF3F] to-[#CBB3E8] p-0.5 shadow-xl overflow-hidden">
+                  <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover object-top rounded-2xl">
                 </div>
-                <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-[#0d1527] flex items-center justify-center text-[10px] text-white shadow-md shadow-emerald-500/50" title="Open to Opportunities">
+                <div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-[#D4FF3F] border-2 border-white flex items-center justify-center text-xs font-black text-slate-900" title="Available">
                   ✓
                 </div>
               </div>
               <div>
-                <h3 class="font-display font-bold text-xl text-white">Manoj Ravi</h3>
-                <p class="text-xs text-indigo-400 font-mono">Electronics & Communication (ECE)</p>
-                <p class="text-xs text-slate-400 mt-1 flex items-center gap-1">
-                  <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-400"></i>
-                  <span>Sri Shakthi Institute • 2020 - 2024</span>
+                <h3 class="font-display font-black text-2xl text-slate-900 tracking-tight">Manoj Ravi</h3>
+                <p class="text-xs text-[#E34234] font-mono font-bold">B.E • Electronics & Communication</p>
+                <p class="text-xs text-slate-700 mt-1 flex items-center gap-1 font-medium">
+                  <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-slate-600"></i>
+                  <span>Sri Shakthi Institute of Engineering</span>
                 </p>
               </div>
             </div>
 
-            <!-- Academic & Project Metric Grid with Animated Counter -->
-            <div class="grid grid-cols-2 gap-3 pt-2">
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
-                <span class="text-[11px] text-slate-400 uppercase font-semibold">Engineering GPA</span>
-                <div class="text-2xl font-bold font-display text-white">
-                  <span data-counter="7.8">7.8</span> <span class="text-xs text-slate-500">/ 10</span>
+            <!-- Metric Grid with Tricolor Accents -->
+            <div class="grid grid-cols-2 gap-3 pt-1">
+              <div class="p-3 rounded-xl bg-white/70 border border-black/5 space-y-0.5 shadow-sm">
+                <span class="text-[10px] text-slate-600 uppercase font-bold tracking-wider">Engineering GPA</span>
+                <div class="text-2xl font-black font-display text-[#E34234]">
+                  <span>7.8</span> <span class="text-xs text-slate-600 font-medium">/ 10</span>
                 </div>
-                <p class="text-[10px] text-cyan-400">Sri Shakthi Institute</p>
+                <p class="text-[10px] text-slate-700 font-medium">Sri Shakthi Institute</p>
               </div>
 
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
-                <span class="text-[11px] text-slate-400 uppercase font-semibold">Higher Secondary</span>
-                <div class="text-2xl font-bold font-display text-white">
-                  <span data-counter="7.0">7.0</span> <span class="text-xs text-slate-500">/ 10</span>
+              <div class="p-3 rounded-xl bg-white/70 border border-black/5 space-y-0.5 shadow-sm">
+                <span class="text-[10px] text-slate-600 uppercase font-bold tracking-wider">HSC Score</span>
+                <div class="text-2xl font-black font-display text-slate-900">
+                  <span>7.0</span> <span class="text-xs text-slate-600 font-medium">/ 10</span>
                 </div>
-                <p class="text-[10px] text-indigo-400">Sathya Sai School</p>
+                <p class="text-[10px] text-slate-700 font-medium">Sathya Sai School</p>
               </div>
 
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
-                <span class="text-[11px] text-slate-400 uppercase font-semibold">Key Projects</span>
-                <div class="text-2xl font-bold font-display text-white">
-                  <span data-counter="2">2</span>+
+              <div class="p-3 rounded-xl bg-white/70 border border-black/5 space-y-0.5 shadow-sm">
+                <span class="text-[10px] text-slate-600 uppercase font-bold tracking-wider">Key Prototypes</span>
+                <div class="text-2xl font-black font-display text-[#121800]">
+                  <span class="bg-[#D4FF3F] px-1.5 rounded">2+</span>
                 </div>
-                <p class="text-[10px] text-emerald-400">IoT Sensors & UiPath RPA</p>
+                <p class="text-[10px] text-slate-700 font-medium">IoT Sensors & RPA</p>
               </div>
 
-              <div class="p-3.5 rounded-xl bg-slate-900/60 border border-white/5 space-y-1">
-                <span class="text-[11px] text-slate-400 uppercase font-semibold">Languages</span>
-                <div class="text-sm font-bold font-display text-white mt-1">English & Tamil</div>
-                <p class="text-[10px] text-slate-400">Fluent Professional</p>
+              <div class="p-3 rounded-xl bg-white/70 border border-black/5 space-y-0.5 shadow-sm">
+                <span class="text-[10px] text-slate-600 uppercase font-bold tracking-wider">Languages</span>
+                <div class="text-sm font-bold font-display text-slate-900 mt-1">English & Tamil</div>
+                <p class="text-[10px] text-slate-700 font-medium">Fluent Professional</p>
               </div>
             </div>
 
-            <!-- Focus areas tags -->
-            <div class="space-y-2 pt-2 border-t border-white/10">
-              <span class="text-xs text-slate-400 font-medium block">Key Focus Areas:</span>
+            <!-- Focus areas tags in tricolor -->
+            <div class="space-y-2 pt-2 border-t border-black/10">
+              <span class="text-xs text-slate-700 font-bold uppercase tracking-wider block">Core Competencies:</span>
               <div class="flex flex-wrap gap-1.5">
-                <span class="tag-badge cyan"><i data-lucide="cpu" class="w-3 h-3"></i> Embedded C</span>
-                <span class="tag-badge indigo"><i data-lucide="bot" class="w-3 h-3"></i> UiPath RE Framework</span>
-                <span class="tag-badge emerald"><i data-lucide="terminal" class="w-3 h-3"></i> Python & C</span>
+                <span class="tag-badge lime"><i data-lucide="cpu" class="w-3 h-3"></i> Embedded C</span>
+                <span class="tag-badge flame"><i data-lucide="bot" class="w-3 h-3"></i> UiPath RE Framework</span>
+                <span class="tag-badge"><i data-lucide="terminal" class="w-3 h-3"></i> Python & C</span>
                 <span class="tag-badge"><i data-lucide="database" class="w-3 h-3"></i> MySQL</span>
                 <span class="tag-badge"><i data-lucide="server" class="w-3 h-3"></i> Linux</span>
               </div>
@@ -273,163 +277,159 @@
     </div>
   </section>
 
-  <!-- ================= TOPICS HUB (MULTI-PAGE DIRECTORY) ================= -->
-  <section class="py-20 relative border-t border-purple-500/20">
+  <!-- ================= TRICOLOR EXPLORE SECTIONS HUB ================= -->
+  <section class="py-14 relative border-t-2 border-white/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Header -->
-      <div class="text-center space-y-3 max-w-2xl mx-auto mb-16 reveal-fade-up">
-        <span class="hero-badge">Explore Topics</span>
-        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
-          Detailed Portfolio Sections
+      <div class="text-center space-y-2 max-w-2xl mx-auto mb-10">
+        <span class="hero-badge">Explore Portfolio</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-black text-slate-900 tracking-tight">
+          Portfolio Sections & Documentation
         </h2>
-        <p class="text-sm text-slate-400">
-          Click on any topic below to open its dedicated page for comprehensive technical specifications, workflows, and achievements.
+        <p class="text-sm text-slate-800 font-medium">
+          Navigate to detailed specifications, workflows, and complete technical credentials.
         </p>
       </div>
 
-      <!-- Topics Grid with Staggered Scroll Reveal & 3D Tilt -->
+      <!-- Topics Grid (6 Cards, compact, no empty gaps) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-        <!-- Topic 1: About Me -->
-        <a href="about.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-indigo-500/50 reveal-fade-up delay-100">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
+        <!-- Card 1: About Me -->
+        <a href="about.html" class="glass-card p-6 flex flex-col justify-between group hover:border-[#E34234] transition">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-[#E34234]/15 border border-[#E34234]/30 flex items-center justify-center text-[#E34234] group-hover:scale-110 group-hover:bg-[#E34234] group-hover:text-white transition-all">
               <i data-lucide="user" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-indigo-400 transition-colors">About & Career Objective</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                Learn more about Manoj's background in Electronics & Communication, career vision, core competencies, and fluency in English & Tamil.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">About & Career Vision</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                Academic foundation in Electronics & Communication, problem-solving mindset, and professional fluency in English & Tamil.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge indigo">B.E - ECE</span>
+              <span class="tag-badge flame">B.E - ECE</span>
               <span class="tag-badge">Engineering Mindset</span>
-              <span class="tag-badge">Problem Solving</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-indigo-400 group-hover:text-indigo-300">
-            <span>Read Full Biography & Objectives</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-[#E34234]">
+            <span>Read Biography</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
 
-        <!-- Topic 2: Projects -->
-        <a href="projects.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-cyan-500/50 reveal-fade-up delay-200">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
+        <!-- Card 2: Projects Portfolio -->
+        <a href="projects.html" class="glass-card p-6 flex flex-col justify-between group hover:border-[#D4FF3F] transition">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-[#D4FF3F] border border-black/10 flex items-center justify-center text-slate-950 group-hover:scale-110 transition-all shadow-sm">
+              <i data-lucide="code-2" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-cyan-400 transition-colors">Engineering Projects</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                In-depth architectural breakdowns of the Raspberry Pi Soil Sensor Crop System and UiPath RE Framework automation pipeline.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">Engineering Projects</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                Raspberry Pi soil analysis with crop recommendation & UiPath robotic process automation with RE Framework.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge cyan">Raspberry Pi</span>
-              <span class="tag-badge cyan">Soil Sensors</span>
-              <span class="tag-badge indigo">UiPath RE Framework</span>
+              <span class="tag-badge lime">Raspberry Pi</span>
+              <span class="tag-badge flame">UiPath RPA</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
-            <span>Explore Technical Case Studies</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-slate-900 group-hover:text-[#E34234]">
+            <span>Explore Technical Specs</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
 
-        <!-- Topic 3: Work Experience -->
-        <a href="experience.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-emerald-500/50 reveal-fade-up delay-300">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+        <!-- Card 3: Work Experience -->
+        <a href="experience.html" class="glass-card p-6 flex flex-col justify-between group hover:border-[#E34234] transition">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-white border border-black/10 flex items-center justify-center text-[#E34234] group-hover:scale-110 transition-all shadow-sm">
               <i data-lucide="briefcase" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-emerald-400 transition-colors">Work Experience</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                Professional experience at Hexaware Technologies and embedded microcontroller engineering internship at Tech UC.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">Work Experience</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                Customer support at Hexaware Technologies & Embedded Systems internship at Tech UC working on PIC microcontrollers.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge emerald">Hexaware Technologies</span>
-              <span class="tag-badge">Tech UC Intern</span>
-              <span class="tag-badge">PIC Controller</span>
+              <span class="tag-badge">Hexaware Tech</span>
+              <span class="tag-badge flame">Tech UC Intern</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
-            <span>View Roles, SLA & Contributions</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-[#E34234]">
+            <span>View Timeline</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
 
-        <!-- Topic 4: Technical Skills -->
-        <a href="skills.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-indigo-500/50 reveal-fade-up delay-100">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all">
-              <i data-lucide="code" class="w-6 h-6"></i>
+        <!-- Card 4: Technical Skills -->
+        <a href="skills.html" class="glass-card p-6 flex flex-col justify-between group hover:border-[#D4FF3F] transition">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-[#D4FF3F] border border-black/10 flex items-center justify-center text-slate-950 group-hover:scale-110 transition-all shadow-sm">
+              <i data-lucide="cpu" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-indigo-400 transition-colors">Technical Skills</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                Comprehensive skill matrix across C Programming, Python, Embedded C, MySQL, Linux, Hardware Support, and Soft Skills.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">Technical Skills</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                Proficiency metrics across Embedded C, Python, C programming, MySQL databases, Linux command line, and Git.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge">C & Python</span>
-              <span class="tag-badge">Embedded C</span>
-              <span class="tag-badge">MySQL & Linux</span>
+              <span class="tag-badge lime">Embedded C</span>
+              <span class="tag-badge">Python</span>
+              <span class="tag-badge flame">Hardware Support</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-indigo-400 group-hover:text-indigo-300">
-            <span>Inspect Complete Skill Matrix</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-slate-900 group-hover:text-[#E34234]">
+            <span>View Skill Radar</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
 
-        <!-- Topic 5: Education Credentials -->
-        <a href="education.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-cyan-500/50 reveal-fade-up delay-200">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
+        <!-- Card 5: Education Credentials -->
+        <a href="education.html" class="glass-card p-6 flex flex-col justify-between group hover:border-[#E34234] transition">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-[#E34234]/15 border border-[#E34234]/30 flex items-center justify-center text-[#E34234] group-hover:scale-110 group-hover:bg-[#E34234] group-hover:text-white transition-all">
               <i data-lucide="graduation-cap" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-cyan-400 transition-colors">Education Credentials</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                Academic qualifications from Sri Shakthi Institute (7.8 GPA) and Sathya Sai Higher Secondary (7.0 GPA) with core coursework.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">Education & Academics</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                B.E in Electronics & Communication at Sri Shakthi Institute (7.8 GPA) and HSC at Sathya Sai School.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge cyan">Sri Shakthi Institute</span>
-              <span class="tag-badge">7.8 / 10 GPA</span>
-              <span class="tag-badge">ECE Core Labs</span>
+              <span class="tag-badge flame">GPA 7.8</span>
+              <span class="tag-badge lime">2020 – 2024</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
-            <span>View Academics & Courses</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-[#E34234]">
+            <span>View Academic Records</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
 
-        <!-- Topic 6: Contact & Connect -->
-        <a href="contact.html" class="glass-card tilt-card p-6 flex flex-col justify-between group hover:border-emerald-500/50 reveal-fade-up delay-300">
-          <div class="space-y-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
-              <i data-lucide="mail" class="w-6 h-6"></i>
+        <!-- Card 6: Direct Contact Hub -->
+        <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="glass-card p-6 flex flex-col justify-between group hover:border-[#E34234] transition bg-white/90">
+          <div class="space-y-3">
+            <div class="w-12 h-12 rounded-xl bg-[#E34234] text-white flex items-center justify-center group-hover:scale-110 transition-all shadow-md">
+              <i data-lucide="send" class="w-6 h-6"></i>
             </div>
             <div>
-              <h3 class="text-xl font-display font-bold text-white group-hover:text-emerald-400 transition-colors">Contact & Connect</h3>
-              <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                Send a direct message, copy contact credentials, or schedule an interview. Coimbatore based with rapid response.
+              <h3 class="text-xl font-display font-black text-slate-900 group-hover:text-[#E34234] transition-colors">Contact Manoj Directly</h3>
+              <p class="text-xs text-slate-700 mt-1.5 leading-relaxed font-medium">
+                Click to open your mail app addressed to <strong>manojravi1707@gmail.com</strong> for job opportunities and inquiries.
               </p>
             </div>
             <div class="flex flex-wrap gap-1.5 pt-1">
-              <span class="tag-badge emerald">manojravi1707@gmail.com</span>
-              <span class="tag-badge">+91 6379348375</span>
+              <span class="tag-badge flame">manojravi1707@gmail.com</span>
+              <span class="tag-badge lime">Immediate Response</span>
             </div>
           </div>
-          <div class="pt-6 border-t border-white/10 mt-6 flex items-center justify-between text-xs font-semibold text-emerald-400 group-hover:text-emerald-300">
-            <span>Open Dedicated Contact Page</span>
+          <div class="pt-4 border-t border-black/10 mt-5 flex items-center justify-between text-xs font-bold text-[#E34234]">
+            <span>Open Email Client</span>
             <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
           </div>
         </a>
@@ -438,205 +438,60 @@
     </div>
   </section>
 
-  <!-- ================= HIGHLIGHTED PROJECTS PREVIEW ================= -->
-  <section class="py-20 relative">
+  <!-- ================= DIRECT CALL TO ACTION TRICOLOR BANNER ================= -->
+  <section class="py-12 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-fade-up">
-        <div>
-          <span class="hero-badge">Featured Work</span>
-          <h2 class="text-3xl font-display font-bold text-white mt-2">
-            Engineering Projects Overview
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            Hands-on prototypes linking physical electronics with intelligent automation.
-          </p>
+      <div class="glass-card p-8 sm:p-12 text-center space-y-6 border-2 border-white/80 bg-gradient-to-r from-white/90 via-white/80 to-white/90 shadow-xl">
+        <span class="hero-badge">Get in Touch Directly</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-black text-slate-900 max-w-2xl mx-auto tracking-tight">
+          Have an Opening in Embedded Systems or Automation?
+        </h2>
+        <p class="text-base text-slate-800 max-w-xl mx-auto font-medium">
+          I am actively available for full-time engineering positions and technical interviews. Reach out directly via email or mobile.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+          <a href="mailto:manojravi1707@gmail.com?subject=Job%20Opportunity%20for%20Manoj%20Ravi" class="btn-primary text-sm !py-3.5 !px-8">
+            <i data-lucide="send" class="w-5 h-5"></i>
+            <span>Send Email to Manoj Ravi (manojravi1707@gmail.com)</span>
+          </a>
+
+          <a href="tel:+916379348375" class="btn-secondary text-sm !py-3.5 !px-8">
+            <i data-lucide="phone" class="w-5 h-5 text-[#E34234]"></i>
+            <span>Call +91 6379348375</span>
+          </a>
         </div>
-        <a href="projects.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2 hover:translate-x-1 transition-transform">
-          <span>View All Projects in Detail</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        
-        <!-- Project 1 Card -->
-        <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between space-y-6 reveal-fade-left">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="tag-badge cyan">IoT & Embedded Systems</span>
-              <span class="text-xs text-slate-400 font-mono">Raspberry Pi</span>
-            </div>
-            <h3 class="text-2xl font-display font-bold text-white">
-              Soil Analysis and Crop Recommendation System
-            </h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Precision agricultural engineering prototype utilizing physical soil sensors to gather nutrient indices (NPK), moisture levels, and pH readings. Python recommendation algorithm matches soil profiles against crop growth conditions.
-            </p>
-            <div class="space-y-2 pt-2">
-              <span class="text-xs text-slate-400 font-medium block">Key Highlights:</span>
-              <ul class="text-xs text-slate-300 space-y-1.5">
-                <li class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Real-time telemetry with soil sensors & ADC converter</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i>
-                  <span>Nutritional & physical analysis for crop optimization</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tag-badge cyan">Raspberry Pi</span>
-              <span class="tag-badge">Python</span>
-              <span class="tag-badge">Sensors</span>
-            </div>
-            <a href="projects.html#soil-analysis" class="btn-primary shimmer-btn text-xs !py-2 !px-3">
-              <span>Deep Dive Details →</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project 2 Card -->
-        <div class="glass-card tilt-card p-6 sm:p-8 flex flex-col justify-between space-y-6 reveal-fade-right">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="tag-badge indigo">Robotic Process Automation</span>
-              <span class="text-xs text-slate-400 font-mono">UiPath Studio</span>
-            </div>
-            <h3 class="text-2xl font-display font-bold text-white">
-              UiPath RE Framework & Web Scraping Automation
-            </h3>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Industrial-grade robotic software automation pipeline built with the Robotic Enterprise (RE) Framework state machine. Scrapes dynamic web datasets, populates Excel sheets, and triggers automated email notifications with attachments.
-            </p>
-            <div class="space-y-2 pt-2">
-              <span class="text-xs text-slate-400 font-medium block">Key Highlights:</span>
-              <ul class="text-xs text-slate-300 space-y-1.5">
-                <li class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i>
-                  <span>Automated web form data entry with robust exception handling</span>
-                </li>
-                <li class="flex items-center gap-2">
-                  <i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i>
-                  <span>Automated reporting & email dispatch with document attachments</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tag-badge indigo">UiPath</span>
-              <span class="tag-badge">RE Framework</span>
-              <span class="tag-badge">Excel Automation</span>
-            </div>
-            <a href="projects.html#uipath-automation" class="btn-primary shimmer-btn text-xs !py-2 !px-3">
-              <span>Deep Dive Details →</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= WORK EXPERIENCE PREVIEW ================= -->
-  <section class="py-20 relative border-t border-purple-500/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4 reveal-fade-up">
-        <div>
-          <span class="hero-badge">Work History</span>
-          <h2 class="text-3xl font-display font-bold text-white mt-2">
-            Professional Experience Overview
-          </h2>
-          <p class="text-sm text-slate-400 mt-1">
-            Proven track record in customer operations and embedded microcontroller engineering.
-          </p>
-        </div>
-        <a href="experience.html" class="btn-secondary text-xs self-start md:self-auto flex items-center gap-2 hover:translate-x-1 transition-transform">
-          <span>View Full Experience Timeline</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- Hexaware Card -->
-        <div class="glass-card tilt-card p-6 space-y-4 flex flex-col justify-between reveal-fade-left">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-cyan-400">10 Jul 2025 – 3 Apr 2026</span>
-              <span class="tag-badge emerald">Corporate Role</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white mt-2">Hexaware Technologies</h3>
-            <p class="text-xs text-indigo-400 font-medium">Customer Operations & Query Resolution</p>
-            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-              Assisted customers with queries through clear communication and active listening, managed time efficiently across high-volume daily interactions, and enhanced customer satisfaction.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs text-slate-400">Time Management • Communication</span>
-            <a href="experience.html#hexaware" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1 group">
-              <span>View Details</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Tech UC Intern Card -->
-        <div class="glass-card tilt-card p-6 space-y-4 flex flex-col justify-between reveal-fade-right">
-          <div>
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-mono text-indigo-400">1 Jan 2022 – 1 Feb 2022</span>
-              <span class="tag-badge indigo">Internship</span>
-            </div>
-            <h3 class="text-xl font-display font-bold text-white mt-2">Tech UC - Intern</h3>
-            <p class="text-xs text-cyan-400 font-medium">Embedded Systems & Microcontrollers</p>
-            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-              Programmed PIC microcontrollers in Embedded C, interfaced 16x2 LCD displays, explored communication protocols (UART, I2C, SPI), and simulated circuits via embedded simulation tools.
-            </p>
-          </div>
-          <div class="pt-4 border-t border-white/10 flex items-center justify-between">
-            <span class="text-xs text-slate-400">PIC Controller • Embedded C</span>
-            <a href="experience.html#tech-uc" class="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1 group">
-              <span>View Details</span>
-              <i data-lucide="chevron-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="py-12 border-t border-purple-500/20">
+  <footer class="py-10 border-t-2 border-white/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center justify-between gap-6">
         
         <div class="flex items-center gap-3">
-          <div class="w-9 h-9 rounded-lg bg-indigo-600/30 border border-indigo-500/40 p-0.5 overflow-hidden">
-            <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover rounded-md">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#E34234] to-[#D4FF3F] p-0.5 overflow-hidden">
+            <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover rounded-[10px]">
           </div>
           <div>
-            <h4 class="font-display font-bold text-white text-sm">Manoj Ravi</h4>
-            <p class="text-xs text-slate-400">B.E - ECE Graduate • IoT & RPA</p>
+            <h4 class="font-display font-black text-slate-900 text-sm">Manoj Ravi</h4>
+            <p class="text-xs text-slate-800 font-medium">B.E - ECE Graduate • Embedded & RPA</p>
           </div>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-400 font-medium">
-          <a href="index.html" class="hover:text-white transition">Home</a>
-          <a href="about.html" class="hover:text-white transition">About</a>
-          <a href="projects.html" class="hover:text-white transition">Projects</a>
-          <a href="experience.html" class="hover:text-white transition">Experience</a>
-          <a href="skills.html" class="hover:text-white transition">Skills</a>
-          <a href="education.html" class="hover:text-white transition">Education</a>
-          <a href="contact.html" class="hover:text-white transition">Contact</a>
+        <div class="flex flex-wrap justify-center gap-6 text-xs text-slate-800 font-bold">
+          <a href="index.html" class="hover:text-[#E34234] transition">Home</a>
+          <a href="about.html" class="hover:text-[#E34234] transition">About</a>
+          <a href="projects.html" class="hover:text-[#E34234] transition">Projects</a>
+          <a href="experience.html" class="hover:text-[#E34234] transition">Experience</a>
+          <a href="skills.html" class="hover:text-[#E34234] transition">Skills</a>
+          <a href="education.html" class="hover:text-[#E34234] transition">Education</a>
+          <a href="contact.html" class="hover:text-[#E34234] transition">Contact</a>
         </div>
 
-        <p class="text-xs text-slate-500 text-center md:text-right">
-          © 2026 Manoj Ravi. Built with HTML5, Tailwind CSS & Git.
+        <p class="text-xs text-slate-700 text-center md:text-right font-semibold">
+          © 2026 Manoj Ravi. All rights reserved.
         </p>
 
       </div>
@@ -646,7 +501,7 @@
   <!-- ================= FLOATING BACK TO TOP BUTTON ================= -->
   <button id="back-to-top" aria-label="Back to top">
     <svg class="progress-ring" viewBox="0 0 48 48">
-      <circle class="progress-circle" stroke="#06b6d4" stroke-width="2.5" fill="transparent" r="22" cx="24" cy="24" />
+      <circle class="progress-circle" stroke="#D4FF3F" stroke-width="3" fill="transparent" r="22" cx="24" cy="24" />
     </svg>
     <i data-lucide="chevron-up" class="w-5 h-5 relative z-10"></i>
   </button>
@@ -656,67 +511,55 @@
     <div class="modal-card p-6 sm:p-8 relative">
       
       <!-- Close Button -->
-      <button id="modal-close-btn" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition">
+      <button id="modal-close-btn" class="absolute top-5 right-5 text-slate-700 hover:text-slate-950 p-2 rounded-xl bg-slate-100 hover:bg-slate-200 transition">
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
       <!-- Modal Header -->
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
-        <div class="flex items-center gap-4">
-          <div class="w-16 h-16 rounded-xl bg-indigo-600/30 border border-indigo-500/40 overflow-hidden shrink-0">
-            <img src="profile.jpg" alt="Manoj Ravi" class="w-full h-full object-cover">
-          </div>
-          <div>
-            <h2 class="text-2xl font-display font-bold text-white">MANOJ RAVI</h2>
-            <p class="text-sm font-mono text-indigo-400">B.E - Electronics & Communication Engineering</p>
-            <p class="text-xs text-slate-400 mt-1 flex flex-wrap gap-2">
-              <span>Coimbatore, Tamil Nadu</span> • 
-              <span>manojravi1707@gmail.com</span> • 
-              <span>+91 6379348375</span>
-            </p>
-          </div>
+      <div class="flex items-center justify-between border-b border-black/10 pb-4 mb-6">
+        <div>
+          <h3 class="text-2xl font-display font-black text-slate-900">Manoj Ravi — Official Resume</h3>
+          <p class="text-xs text-slate-600 font-mono mt-0.5">B.E • Electronics & Communication Engineering</p>
         </div>
-
-        <!-- Print action -->
-        <button id="modal-print-btn" class="btn-primary shimmer-btn text-xs !py-2 !px-4 self-start sm:self-auto shrink-0 flex items-center gap-2">
-          <i data-lucide="printer" class="w-4 h-4"></i>
+        <button id="print-resume-btn" class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#E34234] text-white hover:bg-slate-900 transition text-xs font-bold">
+          <i data-lucide="printer" class="w-3.5 h-3.5"></i>
           <span>Print / Save PDF</span>
         </button>
       </div>
 
-      <!-- Modal Content: Resume Breakdown -->
-      <div class="space-y-6 pt-6 text-slate-300 text-xs sm:text-sm">
+      <!-- Resume Content Inside Modal -->
+      <div class="space-y-6 text-sm text-slate-800">
         
         <!-- Profile Summary -->
         <div>
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Profile Summary</h4>
-          <p class="leading-relaxed text-slate-300">
+          <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Profile Summary</h4>
+          <p class="leading-relaxed">
             To obtain an entry-level position in a reputed organization where I can apply my skills and knowledge to contribute to the company's growth, learn from experienced professionals, and further develop my skills and expertise to advance my career.
           </p>
         </div>
 
         <!-- Education -->
         <div>
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Education</h4>
+          <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Education</h4>
           <div class="space-y-2">
             <div class="flex justify-between items-start">
               <div>
-                <strong class="text-white block">Sri Shakthi Institute</strong>
-                <span class="text-slate-400">Electronics and Communication Engineering</span>
+                <strong class="text-slate-950 block">Sri Shakthi Institute of Engineering and Technology</strong>
+                <span class="text-slate-600">Electronics and Communication Engineering</span>
               </div>
               <div class="text-right">
-                <span class="text-indigo-400 font-mono">2020 – 2024</span>
-                <span class="block text-emerald-400 font-semibold">GPA: 7.8 / 10</span>
+                <span class="text-[#E34234] font-mono font-bold">2020 – 2024</span>
+                <span class="block text-slate-900 font-semibold">GPA: 7.8 / 10</span>
               </div>
             </div>
             <div class="flex justify-between items-start pt-1">
               <div>
-                <strong class="text-white block">Sathya Sai School</strong>
-                <span class="text-slate-400">Higher Secondary (HSC)</span>
+                <strong class="text-slate-950 block">Sathya Sai Matriculation Higher Secondary School</strong>
+                <span class="text-slate-600">Higher Secondary (HSC)</span>
               </div>
               <div class="text-right">
-                <span class="text-indigo-400 font-mono">2019 – 2020</span>
-                <span class="block text-emerald-400 font-semibold">GPA: 7.0 / 10</span>
+                <span class="text-[#E34234] font-mono font-bold">2019 – 2020</span>
+                <span class="block text-slate-900 font-semibold">GPA: 7.0 / 10</span>
               </div>
             </div>
           </div>
@@ -724,20 +567,20 @@
 
         <!-- Projects -->
         <div>
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Projects</h4>
+          <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Key Projects</h4>
           <div class="space-y-3">
             <div>
-              <strong class="text-white">Raspberry Pi: Soil Analysis and Crop Recommendation</strong>
-              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+              <strong class="text-slate-950">Raspberry Pi: Soil Analysis and Crop Recommendation</strong>
+              <ul class="list-disc list-inside text-slate-700 mt-1 space-y-0.5 text-xs">
                 <li>Soil Analysis using soil sensors (NPK, pH, Moisture).</li>
                 <li>Crop recommendation based on soil nutritional and physical analysis.</li>
               </ul>
             </div>
             <div>
-              <strong class="text-white">UiPath and Automation: RE Framework, Excel data scraping and web automation</strong>
-              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+              <strong class="text-slate-950">UiPath and Automation: RE Framework, Excel data scraping and web automation</strong>
+              <ul class="list-disc list-inside text-slate-700 mt-1 space-y-0.5 text-xs">
                 <li>Working with the RE Framework for automatic page filling.</li>
-                <li>Data scraping and web application automation for easy data analysis and time reduction.</li>
+                <li>Data scraping and web application automation for easy data analysis.</li>
                 <li>Email automation with attached document copy.</li>
               </ul>
             </div>
@@ -746,30 +589,26 @@
 
         <!-- Work Experience -->
         <div>
-          <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Work Experience</h4>
+          <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Work Experience</h4>
           <div class="space-y-3">
             <div>
               <div class="flex justify-between items-baseline">
-                <strong class="text-white">Hexaware Technologies</strong>
-                <span class="text-indigo-400 font-mono text-xs">10 Jul 2025 – 3 Apr 2026</span>
+                <strong class="text-slate-950">Hexaware Technologies</strong>
+                <span class="text-[#E34234] font-mono font-bold text-xs">10 Jul 2025 – 3 Apr 2026</span>
               </div>
-              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
+              <ul class="list-disc list-inside text-slate-700 mt-1 space-y-0.5 text-xs">
                 <li>Assisted customers with queries through clear communication and active listening.</li>
                 <li>Managed time efficiently to handle multiple customer interactions daily.</li>
-                <li>Delivered effective solutions while maintaining high service quality standards.</li>
-                <li>Enhanced customer satisfaction by resolving issues promptly.</li>
               </ul>
             </div>
             <div>
               <div class="flex justify-between items-baseline">
-                <strong class="text-white">Tech UC - Intern</strong>
-                <span class="text-indigo-400 font-mono text-xs">1 Jan – 1 Feb 2022</span>
+                <strong class="text-slate-950">Tech UC - Intern</strong>
+                <span class="text-[#E34234] font-mono font-bold text-xs">1 Jan – 1 Feb 2022</span>
               </div>
-              <ul class="list-disc list-inside text-slate-300 mt-1 space-y-0.5">
-                <li>Working with PIC micro-controller.</li>
-                <li>Interfacing PIC micro-controller with LCD display.</li>
+              <ul class="list-disc list-inside text-slate-700 mt-1 space-y-0.5 text-xs">
+                <li>Working with PIC micro-controller and LCD display interfacing.</li>
                 <li>Basics of Embedded C & Communication protocols.</li>
-                <li>Stimulation of projects using Embedded Software.</li>
               </ul>
             </div>
           </div>
@@ -778,15 +617,13 @@
         <!-- Skills & Languages -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Skills & Expertise</h4>
-            <p class="text-slate-300"><strong>Technical:</strong> C Programming, Python, MySQL, Hardware Support, Embedded C, Linux.</p>
-            <p class="text-slate-300 mt-1"><strong>Expertise:</strong> Leadership, Communication, Time Management.</p>
+            <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Technical Skills</h4>
+            <p class="text-xs text-slate-700">C Programming, Python, MySQL, Hardware Support, Embedded C, Linux.</p>
           </div>
           <div>
-            <h4 class="font-bold text-white uppercase text-xs tracking-wider border-b border-white/10 pb-1 mb-2">Languages</h4>
-            <p class="text-slate-300">English: Fluent</p>
-            <p class="text-slate-300">Tamil: Fluent</p>
-            <p class="text-slate-400 mt-1"><strong>Location:</strong> Coimbatore, Tamil Nadu</p>
+            <h4 class="font-bold text-slate-900 uppercase text-xs tracking-wider border-b border-black/10 pb-1 mb-2">Languages & Location</h4>
+            <p class="text-xs text-slate-700">English: Fluent | Tamil: Fluent</p>
+            <p class="text-xs text-slate-700 mt-1">Location: Coimbatore, Tamil Nadu</p>
           </div>
         </div>
 
