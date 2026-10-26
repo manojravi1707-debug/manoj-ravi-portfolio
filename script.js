@@ -614,6 +614,31 @@
     });
   }
 
+  // Interactive Background Switcher for Studies-Related Imagery
+  function initBackgroundSwitcher() {
+    window.switchStudyBackground = function(type) {
+      const buttons = document.querySelectorAll('.bg-switcher-btn');
+      buttons.forEach(b => b.classList.remove('active-bg-btn'));
+      
+      const targetBtn = document.getElementById('btn-bg-' + type);
+      if (targetBtn) targetBtn.classList.add('active-bg-btn');
+
+      if (type === 'circuit') {
+        document.body.style.backgroundImage = "url('circuit-pattern.svg'), radial-gradient(circle at 12% 12%, rgba(212, 255, 63, 0.35) 0%, transparent 45%), radial-gradient(circle at 88% 18%, rgba(227, 66, 52, 0.25) 0%, transparent 42%), radial-gradient(circle at 50% 80%, rgba(212, 255, 63, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(227, 66, 52, 0.18) 0%, transparent 40%)";
+        document.body.style.backgroundSize = "300px 300px, auto, auto, auto, auto";
+        showToast('Background changed to: PCB Circuit Blueprint ⚡', 'success');
+      } else if (type === 'iot') {
+        document.body.style.backgroundImage = "url('iot-network.svg'), radial-gradient(circle at 12% 12%, rgba(212, 255, 63, 0.35) 0%, transparent 45%), radial-gradient(circle at 88% 18%, rgba(227, 66, 52, 0.25) 0%, transparent 42%), radial-gradient(circle at 50% 80%, rgba(212, 255, 63, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(227, 66, 52, 0.18) 0%, transparent 40%)";
+        document.body.style.backgroundSize = "240px 240px, auto, auto, auto, auto";
+        showToast('Background changed to: IoT Wireless Sensor Network 📡', 'success');
+      } else {
+        document.body.style.backgroundImage = "radial-gradient(circle at 12% 12%, rgba(212, 255, 63, 0.35) 0%, transparent 45%), radial-gradient(circle at 88% 18%, rgba(227, 66, 52, 0.25) 0%, transparent 42%), radial-gradient(circle at 50% 80%, rgba(212, 255, 63, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(227, 66, 52, 0.18) 0%, transparent 40%)";
+        document.body.style.backgroundSize = "auto";
+        showToast('Background changed to: Clean Tricolor Ambient Glow ✨', 'success');
+      }
+    };
+  }
+
   // Extended init
   function init() {
     if (window.lucide) lucide.createIcons();
@@ -631,6 +656,7 @@
     initAnimatedSkillBars();
     initParticleCanvas();
     initBackToTop();
+    initBackgroundSwitcher();
     // New advanced animations
     initScrollProgressBar();
     initCursorGlow();

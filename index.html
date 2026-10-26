@@ -17,8 +17,8 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   
-  <!-- Custom Styles with Cache-Buster -->
-  <link rel="stylesheet" href="styles.css?v=3.0">
+  <!-- Custom Styles with Cache-Buster v4.0 -->
+  <link rel="stylesheet" href="styles.css?v=4.0">
 
   <script>
     tailwind.config = {
@@ -50,9 +50,6 @@
 
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress-bar"></div>
-
-  <!-- Cursor Glow Overlay Canvas -->
-  <canvas id="cursor-glow-canvas"></canvas>
 
   <!-- ================= TOP NAVIGATION ================= -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300" id="navbar">
@@ -116,7 +113,7 @@
   </header>
 
   <!-- ================= HERO SECTION (BESPOKE TRICOLOR DESIGN) ================= -->
-  <section id="hero" class="pt-32 pb-16 relative overflow-hidden">
+  <section id="hero" class="pt-28 pb-14 relative overflow-hidden">
     <!-- Interactive Background Particle Canvas -->
     <canvas id="particle-canvas"></canvas>
 
@@ -126,10 +123,33 @@
     <div class="floating-orb delay-2 w-72 h-72 bottom-5 left-10"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      
+      <!-- Interactive Study Background Ideas Switcher Bar -->
+      <div class="flex items-center justify-center lg:justify-start pb-4">
+        <div class="inline-flex items-center flex-wrap gap-2 p-1.5 rounded-2xl bg-white/85 border border-black/10 shadow-sm backdrop-blur-md">
+          <span class="text-[11px] font-extrabold text-slate-800 pl-2 pr-1 flex items-center gap-1.5 uppercase tracking-wider">
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-[#E34234]"></i>
+            <span>ECE Background Ideas:</span>
+          </span>
+          <button id="btn-bg-circuit" onclick="switchStudyBackground('circuit')" class="bg-switcher-btn active-bg-btn" title="PCB Circuit Board & Microcontroller Blueprint">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>PCB Circuit Blueprint</span>
+          </button>
+          <button id="btn-bg-iot" onclick="switchStudyBackground('iot')" class="bg-switcher-btn" title="IoT Wireless Sensor Network Mesh">
+            <i data-lucide="radio" class="w-3.5 h-3.5"></i>
+            <span>IoT Wireless Mesh</span>
+          </button>
+          <button id="btn-bg-clean" onclick="switchStudyBackground('clean')" class="bg-switcher-btn" title="Clean Tricolor Ambient Glow">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+            <span>Clean Tricolor</span>
+          </button>
+        </div>
+      </div>
+
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         <!-- Left Column: Introduction & Core Mission -->
-        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+        <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
           
           <!-- Tricolor Availability Pill -->
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4FF3F] border border-black/10 text-xs font-bold text-slate-950 shadow-md">
@@ -143,7 +163,7 @@
           </div>
 
           <!-- Main Editorial Headline -->
-          <div class="space-y-2">
+          <div class="space-y-1.5">
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight text-slate-900 leading-[1.12]">
               Building Smart <span class="tricolor-gradient-text">Hardware & Automation</span>
             </h1>
@@ -156,11 +176,11 @@
 
           <!-- Bio Description -->
           <p class="text-base sm:text-lg text-slate-800 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium">
-            Electronics and Communication Engineering graduate connecting physical sensor hardware with modern enterprise automation. Experienced in <strong class="text-slate-950 font-bold bg-[#D4FF3F]/35 px-1.5 py-0.5 rounded">Embedded C, PIC Microcontrollers, Raspberry Pi IoT</strong>, and enterprise <strong class="text-slate-950 font-bold bg-[#E34234]/15 px-1.5 py-0.5 rounded text-[#E34234]">UiPath Robotic Process Automation (RE Framework)</strong>.
+            Electronics and Communication Engineering graduate connecting physical sensor hardware with modern enterprise automation. Experienced in <strong class="text-slate-950 font-bold bg-[#D4FF3F]/40 px-1.5 py-0.5 rounded border border-[#D4FF3F]">Embedded C, PIC Microcontrollers, Raspberry Pi IoT</strong>, and enterprise <strong class="text-slate-950 font-bold bg-[#E34234]/15 px-1.5 py-0.5 rounded text-[#E34234] border border-[#E34234]/30">UiPath Robotic Process Automation (RE Framework)</strong>.
           </p>
 
           <!-- Tricolor Action Buttons Suite -->
-          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
             <a href="mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi" class="btn-primary">
               <i data-lucide="mail" class="w-4 h-4"></i>
               <span>Contact Me (Email)</span>
@@ -270,6 +290,144 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ENGINEERING STUDIES VISUAL SHOWCASE (SCHEMATIC BLUEPRINTS) ================= -->
+  <section class="py-14 relative border-t-2 border-white/50 bg-white/35">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 max-w-2xl mx-auto mb-10">
+        <span class="hero-badge">Engineering Studies & Blueprint Visuals</span>
+        <h2 class="text-3xl sm:text-4xl font-display font-black text-slate-900 tracking-tight">
+          Visual Schematics of Academic & Practical Work
+        </h2>
+        <p class="text-sm text-slate-800 font-medium">
+          Architectural diagrams representing key modules from Electronics & Communication studies.
+        </p>
+      </div>
+
+      <!-- 3 Study Blueprint Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Study Card 1: Microcontroller Hardware -->
+        <div class="glass-card p-6 flex flex-col justify-between space-y-4 border-2 border-white/80 shadow-md">
+          <div class="space-y-3">
+            <!-- Diagram Header Graphic -->
+            <div class="h-32 rounded-xl bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] p-3 text-white flex flex-col justify-between relative overflow-hidden border border-black/10">
+              <div class="flex justify-between items-center text-[10px] font-mono text-[#D4FF3F]">
+                <span>PIC16F / PIC18F</span>
+                <span class="bg-[#E34234] px-1.5 py-0.5 rounded text-white font-bold">EMBEDDED C</span>
+              </div>
+              <div class="flex items-center justify-center gap-3 py-1">
+                <!-- Mini Schematic Box -->
+                <div class="w-16 h-14 rounded border border-[#D4FF3F] bg-white/10 flex flex-col items-center justify-center text-[9px] font-mono">
+                  <span class="text-[#D4FF3F] font-bold">MCU</span>
+                  <span class="text-[7px] text-slate-300">GPIO/TIMER</span>
+                </div>
+                <div class="text-[#E34234] text-xs font-mono font-bold">⮂ BUS ⮂</div>
+                <div class="w-16 h-14 rounded border border-[#E34234] bg-white/10 flex flex-col items-center justify-center text-[9px] font-mono">
+                  <span class="text-[#E34234] font-bold">LCD 16x2</span>
+                  <span class="text-[7px] text-slate-300">DISPLAY</span>
+                </div>
+              </div>
+              <div class="text-[9px] font-mono text-slate-300 text-center">
+                Tech UC Internship • Register Bit Manipulation
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-display font-black text-slate-900">Microcontroller & Interfacing</h3>
+              <p class="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
+                Designing circuit logic with PIC microcontrollers, crystal clock oscillators, LCD display buses, and stimulus simulation using Embedded C software.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-black/10 text-[11px] font-semibold">
+            <span class="tag-badge lime">PIC MCU</span>
+            <span class="tag-badge flame">Embedded C</span>
+            <span class="tag-badge">LCD 16x2</span>
+          </div>
+        </div>
+
+        <!-- Study Card 2: IoT Sensor Telemetry -->
+        <div class="glass-card p-6 flex flex-col justify-between space-y-4 border-2 border-white/80 shadow-md">
+          <div class="space-y-3">
+            <!-- Diagram Header Graphic -->
+            <div class="h-32 rounded-xl bg-gradient-to-br from-[#064e3b] to-[#022c22] p-3 text-white flex flex-col justify-between relative overflow-hidden border border-black/10">
+              <div class="flex justify-between items-center text-[10px] font-mono text-[#D4FF3F]">
+                <span>RASPBERRY PI IoT</span>
+                <span class="bg-[#D4FF3F] text-slate-950 px-1.5 py-0.5 rounded font-bold">SMART AGRI</span>
+              </div>
+              <div class="flex items-center justify-center gap-2 py-1">
+                <!-- Sensors -->
+                <div class="text-[8px] font-mono text-center space-y-1">
+                  <span class="block px-1 bg-white/10 rounded text-[#D4FF3F]">NPK Sensor</span>
+                  <span class="block px-1 bg-white/10 rounded text-[#D4FF3F]">pH / Moisture</span>
+                </div>
+                <div class="text-[#D4FF3F] text-xs font-mono font-bold">➔ ADC ➔</div>
+                <!-- Raspberry Pi Hub -->
+                <div class="w-20 h-14 rounded border border-[#D4FF3F] bg-white/10 flex flex-col items-center justify-center text-[9px] font-mono">
+                  <span class="text-[#D4FF3F] font-bold">RPi 4 Model B</span>
+                  <span class="text-[7px] text-slate-300">PYTHON ML</span>
+                </div>
+              </div>
+              <div class="text-[9px] font-mono text-slate-300 text-center">
+                Soil Profile Telemetry & Crop Recommendation
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-display font-black text-slate-900">IoT Telemetry & Smart Sensors</h3>
+              <p class="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
+                Multi-sensor agricultural telemetry connecting physical NPK, moisture, and pH sensors through ADC converter chips to Raspberry Pi Python models.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-black/10 text-[11px] font-semibold">
+            <span class="tag-badge lime">Raspberry Pi</span>
+            <span class="tag-badge flame">Soil Sensors</span>
+            <span class="tag-badge">Python Telemetry</span>
+          </div>
+        </div>
+
+        <!-- Study Card 3: RPA Enterprise Automation -->
+        <div class="glass-card p-6 flex flex-col justify-between space-y-4 border-2 border-white/80 shadow-md">
+          <div class="space-y-3">
+            <!-- Diagram Header Graphic -->
+            <div class="h-32 rounded-xl bg-gradient-to-br from-[#7f1d1d] to-[#450a0a] p-3 text-white flex flex-col justify-between relative overflow-hidden border border-black/10">
+              <div class="flex justify-between items-center text-[10px] font-mono text-[#D4FF3F]">
+                <span>UiPath RPA</span>
+                <span class="bg-[#E34234] px-1.5 py-0.5 rounded text-white font-bold">RE FRAMEWORK</span>
+              </div>
+              <div class="flex items-center justify-center gap-1.5 py-1">
+                <div class="px-2 py-1 rounded bg-white/10 text-[8px] font-mono border border-white/20">Init</div>
+                <span class="text-[#D4FF3F] text-[10px]">➔</span>
+                <div class="px-2 py-1 rounded bg-white/10 text-[8px] font-mono border border-white/20">Get Trans</div>
+                <span class="text-[#D4FF3F] text-[10px]">➔</span>
+                <div class="px-2 py-1 rounded bg-[#D4FF3F] text-slate-950 font-bold text-[8px] font-mono">Process</div>
+              </div>
+              <div class="text-[9px] font-mono text-slate-300 text-center">
+                Excel Scraping, Web Automation & Email Dispatch
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-lg font-display font-black text-slate-900">Robotic Process Automation</h3>
+              <p class="text-xs text-slate-700 mt-1 leading-relaxed font-medium">
+                Enterprise transaction pipeline using UiPath Robotic Enterprise Framework (RE Framework) with automated screen scraping, Excel parsing, and email routing.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-2 border-t border-black/10 text-[11px] font-semibold">
+            <span class="tag-badge flame">UiPath RPA</span>
+            <span class="tag-badge lime">RE Framework</span>
+            <span class="tag-badge">Automation</span>
           </div>
         </div>
 

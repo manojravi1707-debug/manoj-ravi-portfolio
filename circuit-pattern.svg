@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300">
+  <defs>
+    <!-- Flame Via Hole (#E34234) -->
+    <g id="via-flame">
+      <circle cx="0" cy="0" r="6" fill="none" stroke="rgba(227,66,52,0.45)" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2.5" fill="#E34234" fill-opacity="0.8"/>
+    </g>
+    <!-- Lime Via Hole (#D4FF3F) -->
+    <g id="via-lime">
+      <circle cx="0" cy="0" r="6" fill="none" stroke="rgba(212,255,63,0.55)" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2.5" fill="#D4FF3F" fill-opacity="0.9"/>
+    </g>
+    <!-- Microprocessor / IC Chip Outline -->
+    <g id="microcontroller">
+      <rect x="-24" y="-24" width="48" height="48" rx="5" fill="rgba(255,255,255,0.3)" stroke="rgba(227,66,52,0.45)" stroke-width="1.8"/>
+      <!-- Top / Bottom Pins -->
+      <line x1="-18" y1="-30" x2="-18" y2="-24" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="-6" y1="-30" x2="-6" y2="-24" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="6" y1="-30" x2="6" y2="-24" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="18" y1="-30" x2="18" y2="-24" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="-18" y1="24" x2="-18" y2="30" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="-6" y1="24" x2="-6" y2="30" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="6" y1="24" x2="6" y2="30" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <line x1="18" y1="24" x2="18" y2="30" stroke="#E34234" stroke-width="2" stroke-opacity="0.75"/>
+      <!-- Left / Right Pins -->
+      <line x1="-30" y1="-18" x2="-24" y2="-18" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="-30" y1="-6" x2="-24" y2="-6" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="-30" y1="6" x2="-24" y2="6" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="-30" y1="18" x2="-24" y2="18" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="24" y1="-18" x2="30" y2="-18" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="24" y1="-6" x2="30" y2="-6" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="24" y1="6" x2="30" y2="6" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <line x1="24" y1="18" x2="30" y2="18" stroke="#D4FF3F" stroke-width="2" stroke-opacity="0.85"/>
+      <!-- Core Silicon Silicon Circle -->
+      <circle cx="0" cy="0" r="9" fill="none" stroke="rgba(212,255,63,0.75)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="3" fill="#E34234" fill-opacity="0.8"/>
+    </g>
+  </defs>
+
+  <!-- Technical Schematic Coordinate Grid -->
+  <path d="M 0 0 L 300 0 M 0 75 L 300 75 M 0 150 L 300 150 M 0 225 L 300 225 M 0 300 L 300 300" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" stroke-dasharray="4,6" fill="none"/>
+  <path d="M 0 0 L 0 300 M 75 0 L 75 300 M 150 0 L 150 300 M 225 0 L 225 300 M 300 0 L 300 300" stroke="rgba(255,255,255,0.18)" stroke-width="0.8" stroke-dasharray="4,6" fill="none"/>
+
+  <!-- Orthogonal Circuit Bus Traces (Flame Red #E34234) -->
+  <path d="M 30 0 V 45 L 65 80 H 130 V 135 L 155 160 H 230 V 220 L 255 245 V 300" fill="none" stroke="rgba(227,66,52,0.3)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 90 0 V 30 L 125 65 H 195 V 115 L 220 140 H 300" fill="none" stroke="rgba(227,66,52,0.22)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- High-Speed Signal Traces (Electric Lime #D4FF3F) -->
+  <path d="M 0 100 H 45 L 80 135 V 205 L 115 240 H 190 V 300" fill="none" stroke="rgba(212,255,63,0.4)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 170 0 V 45 L 145 70 H 85 L 55 100 V 180 L 25 210 H 0" fill="none" stroke="rgba(212,255,63,0.32)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Communication RF Sine Wave Oscillations (Telecom & ECE Signals) -->
+  <path d="M 190 75 Q 202.5 60, 215 75 T 240 75 T 265 75 T 290 75" fill="none" stroke="rgba(212,255,63,0.5)" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 25 225 Q 37.5 210, 50 225 T 75 225 T 100 225 T 125 225" fill="none" stroke="rgba(227,66,52,0.4)" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Logic Gate Inverter / Resistor symbols -->
+  <path d="M 120 225 L 126 220 L 134 230 L 142 220 L 150 230 L 158 220 L 164 225" fill="none" stroke="rgba(227,66,52,0.35)" stroke-width="1.8"/>
+
+  <!-- Placed IC Chip & Solder Nodes -->
+  <use href="#microcontroller" x="150" y="150"/>
+  <use href="#via-flame" x="30" y="45"/>
+  <use href="#via-flame" x="65" y="80"/>
+  <use href="#via-flame" x="130" y="135"/>
+  <use href="#via-flame" x="230" y="220"/>
+  <use href="#via-lime" x="45" y="100"/>
+  <use href="#via-lime" x="80" y="135"/>
+  <use href="#via-lime" x="115" y="240"/>
+  <use href="#via-lime" x="190" y="240"/>
+  <use href="#via-lime" x="145" y="70"/>
+</svg>
