@@ -497,7 +497,8 @@
         this.vx = (Math.random() - 0.5) * 0.65;
         this.vy = (Math.random() - 0.5) * 0.65;
         this.radius = Math.random() * 2 + 1;
-        this.color = Math.random() > 0.5 ? 'rgba(99, 102, 241, ' : 'rgba(6, 182, 212, ';
+        const palette = ['rgba(124, 58, 237, ', 'rgba(255, 87, 34, ', 'rgba(163, 230, 53, '];
+        this.color = palette[Math.floor(Math.random() * palette.length)];
         this.alpha = Math.random() * 0.45 + 0.25;
       }
 
@@ -595,6 +596,24 @@
     });
   }
 
+  // Universal Contact Me Click Handler (Opens mail client for manojravi1707@gmail.com)
+  function attachContactMeHandlers() {
+    const contactLinks = document.querySelectorAll('a, button');
+    contactLinks.forEach(el => {
+      const text = el.textContent.trim().toLowerCase();
+      if (text === 'contact me' || text === 'get in touch') {
+        if (el.tagName.toLowerCase() === 'a') {
+          el.setAttribute('href', 'mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi');
+        } else {
+          el.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'mailto:manojravi1707@gmail.com?subject=Contact%20Manoj%20Ravi';
+          });
+        }
+      }
+    });
+  }
+
   // Extended init
   function init() {
     if (window.lucide) lucide.createIcons();
@@ -604,6 +623,7 @@
     attachResumeModal();
     attachProjectModal();
     attachContactForm();
+    attachContactMeHandlers();
     initScrollReveal();
     initTypewriter();
     initSpotlightAndTilt();
@@ -661,8 +681,8 @@
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       // Main cursor aura
       const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 60);
-      grad.addColorStop(0, 'rgba(99,102,241,0.18)');
-      grad.addColorStop(0.5, 'rgba(6,182,212,0.08)');
+      grad.addColorStop(0, 'rgba(124,58,237,0.22)');
+      grad.addColorStop(0.5, 'rgba(255,87,34,0.12)');
       grad.addColorStop(1, 'rgba(0,0,0,0)');
       ctx.fillStyle = grad;
       ctx.beginPath();
@@ -674,7 +694,7 @@
         if (t.alpha <= 0) return;
         ctx.beginPath();
         ctx.arc(t.x, t.y, t.r * (1 - i / trails.length), 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99,102,241,${t.alpha * (i / trails.length)})`;
+        ctx.fillStyle = `rgba(124,58,237,${t.alpha * (i / trails.length)})`;
         ctx.fill();
       });
       trails = trails.filter(t => t.alpha > 0);
